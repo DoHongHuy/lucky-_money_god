@@ -1,0 +1,432 @@
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>THẦN TÀI LÌ XÌ - THANTAI.GG</title>
+    <link rel="icon" href="image/favicon.png" type="image/png" sizes="32x32">
+    <!-- mo lixi -->
+    <link href="https://cdn-bk.thantai.gg/lixi/style/ext.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="jqueryv1.8.js"></script>
+    <script src="index.js"></script>
+    <style>
+        b {
+            margin: 0 10px;
+        }
+
+        #lucky-money-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .lucky-money {
+            position: absolute;
+            display: inline-block;
+            pointer-events: none;
+            transform: translateY(-100%);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        .custom-background {
+            background-color: #f00924;
+        }
+    </style>
+</head>
+
+
+<body id="wrap" class="custom-background">
+    <div id="lucky-money-container"></div>
+
+    <div class="header">
+        <ul class="clearfix">
+            <li><a target="_blank" href="/">Diễn đàn</a></li>
+            <li><a target="_blank" href="https://thantai.gg/truc-tiep-xo-so">Trực tiếp</a></li>
+            <li><a target="_blank" href="https://thantai.gg/event">Game dự
+                    đoán</a></li>
+
+            <li><a href="javascript:void(0);" id="showLoginDialog">Đăng nhập</a></li>
+        </ul>
+    </div>
+
+    <div class="banner">
+        <div class="time">
+            <dl>
+                <dt><strong id="div_title">BẮT ĐẦU SAU</strong></dt>
+                <div id="thoiGianConLaiContainer">
+                    <dd><span id="gio"></span>GIỜ<span id="phut"></span>PHÚT<span id="giay"></span>GIÂY</dd>
+                </div>
+            </dl>
+            <div id="div_left">Tổng giải thưởng <span id="leftred">00000000</span>VNĐ</div>
+        </div>
+    </div>
+
+    <div class="w1000">
+        <h1 class="tit">TOP ĐOẠT LÌ XÌ</h1>
+        <div class="box mingdan">
+            <!--Top start-->
+            <div class="dowebok str_wrap str_vertical">
+                <div class="str_move str_origin" style="top: -389.6px;">
+                    <ul class="clearfix cy_up_ul">
+                        <div id="showAllListCustomerLucky">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <link rel="stylesheet" href="https://cdn-bk.thantai.gg/lixi/style/liMarquee.css">
+            <script src="https://cdn-bk.thantai.gg/lixi/style/jquery.js"></script>
+            <script>
+                $(function () {
+                    $('.dowebok').liMarquee({
+                        direction: 'up'
+                    });
+                });
+            </script>
+            <!--Top end-->
+        </div>
+        <div class="box-foot"></div>
+
+        <h2 class="tit">NỘI DUNG SỰ KIỆN</h2>
+        <div class="box box-txt" id="info1">
+            <font size="4">Đối tượng tham gia：Tất cả thành viên<br>
+                Thời gian bắt đầu sự kiện：Từ 05/09/2023<br>Thời gian kết thúc sự kiện：??/??/????<br>
+                Kết duyên tại diễn đàn Thần Tài [thantai.com]. Sau khi truy cập trang web, các bạn hoàn thành các bước
+                tạo tài khoản và điền đầy đủ thông tinh cá nhân đều có thể tham dự <strong>“MỖI NGÀY 3 ĐỢT THẦN TÀI LÌ
+                    XÌ”</strong>. Chỉ cần vào các mốc thời gian <strong>16:15, 17:15, 18:15</strong> truy cập vào diễn
+                đàn thần tài [ thantai.com] có thể tham dự đoạt lì xì. Số lượng lì xì có hạn, Thành viên may mắn nhất có
+                thể đoạt được 39.039 VNĐ! Vừa xem kết quả xổ số vừa nhận lì xì. Nhanh tay chia sẻ niềm vui hiếm có này
+                đến với mọi người xung quanh bạn!</font>
+            <p></p>
+            <table width="100%" border="1">
+                <thead>
+                    <tr>
+                        <th width="13%">
+                            <font size="4">Tổng giải thưởng</font>
+                        </th>
+                        <th width="13%">
+                            <font size="4">Các đợt mở lì xì</font>
+                        </th>
+                        <th width="13%">
+                            <font size="4">Giá trị mỗi lì xì (Ngẫu nhiên)</font>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" width="13%">
+                            <p align="center">
+                                <font size="4" color="#FF0000">
+                                    <span style="">Tổng giải thưởng mỗi đợt</span>
+                                </font><span style="color: #ff0000; ; ">
+                                    <font size="4"><br></font>
+                                </span>
+                                <font size="4" color="#FF0000">
+                                    <span style="">7.999.999đ 🧧</span>
+                                </font>
+                            </p>
+                        </td>
+                        <td width="13%" align="center">
+                            <span style="background-color: #FFFFFF">
+                                <font size="4">
+                                    <span style="">16:15 - 16:30</span>
+                                </font>
+                            </span>
+                        </td>
+                        <td rowspan="3" width="13%">
+                            <p align="center">
+                                <span
+                                    style="box-sizing:border-box; color:#ff0000; font-style:normal; font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; orphans:2; text-align:center; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; text-decoration-style:initial; text-decoration-color:initial; background-color:#ffffff">
+                                    <font size="4">500đ - 39.039đ 🧧</font>
+                                </span>
+                            </p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td width="13%" align="center">
+                            <span style="background-color: #FFFFFF">
+                                <font size="4">
+                                    <span style="">17:15 - 17:30</span>
+                                </font>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="13%" align="center">
+                            <span style="background-color: #FFFFFF">
+                                <font size="4">
+                                    <span>18:15 - 18:30</span>
+                                </font>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="3">
+                            <font size="4">
+                                Mỗi ngày có 3 đợt đoạt lì xì - Hãy chuẩn bị đăng nhập tài khoản trước khi đoạt lì xì.
+                            </font>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="box-foot"></div>
+
+        <h2 class="tit">QUY TẮC SỰ KIỆN</h2>
+        <div class="box box-txt" id="info2">
+            <p>
+                <font size="4">1. Thành viên tham gia đoạt lì xì với số lượng đông trong khi số lượng lì xì có hạn.
+                    Thành viên không đạt được lì xì có thể đợi đợt phát lì xì tiếp theo trong ngày hoặc vào ngày hôm
+                    sau.</font>
+            </p>
+            <p>
+                <font size="4">2. Xu từ lì xì sẽ được cộng thẳng vào tài khoản diễn đàn của bạn.</font>
+            </p>
+            <p>
+                <font size="4">3. Thời gian hoạt động lì xì này có hạn, không cố định thời gian mở và kết thúc hoạt
+                    động. Chỉ cần vào lúc 16:15,17:15,18:15 truy cập diễn đàn đều có thể tham dư.</font>
+            </p>
+            <p>
+                <font size="4">
+                    4. Xu từ lì xì là ngẫu nhiên, giá trị một bao lì xì cao nhất là 39.039 VNĐ (tỉ lệ cực thấp). Do thần
+                    tài lì xì số lượng có hạn, góp ý bạn trước giờ lì xì đăng nhập tài khoản chuẩn bị tốt.</font>
+            </p>
+            <p>
+                <font size="4">
+                    5. Hoạt động này được lập trình tự động, giá trị của lì xì tuân thủ theo xác suất nhẫu nhiên. Không
+                    có bất kỳ sự tham gia nào của con người. Giá trị của lì xì tùy thuộc vào tính toán của hệ thống,
+                    không được tranh cãi.</font>
+            </p>
+            <p>
+                <font size="4">6. Tránh sự khác biệt trong việc nắm bắt nội dung văn bản, diễn đàn Thần Tài sẽ là người
+                    đưa ra quyết định cuối cùng trong hoạt động khuyến mãi này.</font>
+            </p>
+            <p>
+                <font size="4">7. Khi tham gia sự kiện này, đồng nghĩa bạn đồng ý《Điều khoản và quy tắc của sự kiện》.
+                </font>
+            </p>
+            <p>
+                <font size="4">8. Những quy tắc và phần thưởng của sự kiện này có thể thay đổi theo thời gian để phù hợp
+                    với tình hình thực tế. Hãy thường xuyên theo dõi để cập nhật.</font>
+            </p>
+        </div>
+        <div class="box-foot"></div>
+    </div>
+
+    <div class="footer">Copyright © 2023 THANTAI.COM All Rights Reserved</div>
+
+    <!--Draw start-->
+    <div class="hongbao1 dialog flip" id="hbDialog" style="z-index:1000002 ">
+        <span class="hongbao1_colse closeDialog1"></span>
+        <span class="hongbao1_chai" id="draw">Mở lì xì</span>
+    </div>
+    <!--Draw end-->
+
+    <!--Login start-->
+    <div class="dialog" id="loginDialog">
+        <div class="tan_box2">
+            <!--<div class="tan_tit"><span class="closeDialog3"></span>-->
+            <!--    <h2>请输入会员帐号</h2>-->
+            <!--</div>-->
+            <div class="tan_con">
+                <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
+                <div class="hb_sr">
+                    <form id="form-login" method="POST" action="#">
+                        <input type="hidden" name="_token" value="84e8yh4T8eUnBru1Zx2pTeovyX5nnoIYosDgd3AR"> <span>ĐĂNG
+                            NHẬP</span>
+                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+                        <input type="password" name="password" id="password" placeholder="Mật khẩu">
+                    </form>
+                </div>
+                <div class="hb_sr2">
+                    <a href="javascript:;" id="check"></a>
+                    <div class="login_method">
+                        Đăng nhập bằng
+                        <a href="https://thantai.gg/social/google"><img
+                                src="https://cdn-bk.thantai.gg/images/icons/google.png" alt="login with google"
+                                width="24" height="24"></a>
+                    </div>
+                    <div>
+                        <a class="register" href="https://thantai.gg/register">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Login end-->
+
+    <!--Result start-->
+    <div class="hongbao2 dialog" id="resultDialog" style="z-index:1000002 ">
+        <span class="hongbao2_colse closeDialog1"></span>
+        <div class="hongbao_s"><em id="resultMoney">0.00</em></div>
+        <div class="">🧧<span id="resultTimes">0</span>🧧</div>
+        <div class="hongbao_btn closeDialog1"><span>Đóng</span></div>
+    </div>
+    <!--Result end-->
+
+
+    <!--Alert start-->
+    <div class="dialog" id="alertDialog" style="z-index:1000002 ">
+        <div class="tan_box2" style="width:500px">
+            <div class="tan_tit">
+                <span class="closeDialog31"></span>
+                <h3>THÔNG BÁO</h3>
+            </div>
+            <div class="tan_con">
+                <p id="alertInfo"></p>
+                <div class="btn"><a href="javascript:void(0);" class="closeDialog4">OK</a></div>
+            </div>
+        </div>
+    </div>
+    <!--Alert start-->
+
+
+    <!--Logs start-->
+    <!--Logs end-->
+    <div class="black_bg" id="dialogBg"></div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QTEXTL6045"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QTEXTL6045');
+
+        function tinhThoiGianDen5Gio() {
+            var thoiGianHienTai = new Date();
+            var thoiGian5Gio = new Date(thoiGianHienTai.getFullYear(), thoiGianHienTai.getMonth(), thoiGianHienTai.getDate(), 16, 17, 0, 0);
+            var khoangThoiGian = thoiGian5Gio - thoiGianHienTai;
+            var gio = Math.floor(khoangThoiGian / (1000 * 60 * 60));
+            var phut = Math.floor((khoangThoiGian % (1000 * 60 * 60)) / (1000 * 60));
+            var giay = Math.floor((khoangThoiGian % (1000 * 60)) / 1000);
+            document.getElementById("gio").innerHTML = gio;
+            document.getElementById("phut").innerHTML = phut;
+            document.getElementById("giay").innerHTML = giay;
+        }
+        tinhThoiGianDen5Gio();
+        var capNhatInterval = setInterval(tinhThoiGianDen5Gio, 1000);
+
+        // end time
+
+        // Mảng chứa thông tin khách hàng may mắn
+        var danhSachKhachHangMayMan = [
+        { ten : "tienhung101"},  { ten: "quochuy102"},  { ten: "ngochuong103"},  { ten: "hanhphuc104"},  { ten: "linhnga105"}, 
+  { ten : "thanhdat106"},  { ten: "hoanghiep107"},  { ten: "quochung108"},  { ten: "thanhthao109"},  { ten: "vanhieu110"}, 
+  { ten : "tuyethuong111"},  { ten: "minhthu112"},  { ten: "thithao113"},  { ten: "vanduong114"},  { ten: "tuananh115"}, 
+  { ten : "thuytrang116"},  { ten: "datnguyen117"},  { ten: "hanhviet118"},  { ten: "linhphuong119"},  { ten: "ngoctuyen120"}, 
+  { ten : "hoailong121"},  { ten: "nguyenthao122"},  { ten: "tientran123"},  { ten: "hongtruc124"},  { ten: "thanhluan125"}, 
+  { ten : "minhha126"},  { ten: "vuongquoc127"},  { ten: "huongngoc128"},  { ten: "nguyenhien129"},  { ten: "thithu130"}, 
+  { ten : "tanduc131"},  { ten: "quanghuy132"},  { ten: "hongquyen133"},  { ten: "tuanminh134"},  { ten: "tramphuong135"}, 
+  { ten : "thutrang136"},  { ten: "minhquan137"},  { ten: "thanhhuong138"},  { ten: "huynhnhu139"},  { ten: "huyenanh140"}, 
+  { ten : "thithuy141"},  { ten: "nguyenhuy142"},  { ten: "minhduc143"},  { ten: "quanghieu144"},  { ten: "trangphuc145"}, 
+  { ten : "quyentran146"},  { ten: "huynhquang147"},  { ten: "phamthu148"},  { ten: "thanhphong149"},  { ten: "huyhoang150"}, 
+  { ten : "hongchau151"},  { ten: "linhhuong152"},  { ten: "duyminh153"},  { ten: "thuyduong154"},  { ten: "ngoctu155"}, 
+  { ten : "quynhanh156"},  { ten: "hungtien157"},  { ten: "vuthu158"},  { ten: "hieuanh159"},  { ten: "lehoang160"}, 
+  { ten : "duonglam161"},  { ten: "ngoctu162"},  { ten: "minhduc163"},  { ten: "hainguyen164"},  { ten: "minhha165"}, 
+  { ten : "hanhtrinh166"},  { ten: "trantam167"},  { ten: "tienlong168"},  { ten: "truclinh169"},  { ten: "minhtu170"}, 
+  { ten : "phamtrinh171"},  { ten: "huynhhoa172"},  { ten: "nguyetanh173"},  { ten: "huyhung174"},  { ten: "tranquoc175"}, 
+  { ten : "tuyetmai176"},  { ten: "quangthinh177"},  { ten: "huynhthi178"},  { ten: "thuannghia179"},  { ten: "hoainam180"}, 
+            // Thêm các khách hàng khác nếu cần
+        ];
+
+        // Hàm để che phần tên của người dùng và hiển thị số tiền ngẫu nhiên
+        function cheTenVaHienThiSoTien(hoTen, soKiTuChe) {
+            var viTriGiua = Math.floor(hoTen.length / 3);
+            var phanDau = hoTen.substring(0, soKiTuChe);
+            var phanGiua = "*".repeat(hoTen.length - soKiTuChe * 2);
+            var phanCuoi = hoTen.substring(hoTen.length - soKiTuChe);
+
+            // Tạo số tiền ngẫu nhiên từ 1000 đến 9999
+            var soTienNgauNhien = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+
+            return {
+                tenChe: phanDau + phanGiua + phanCuoi,
+                soTien: soTienNgauNhien
+            };
+        }
+        // Hàm để thêm danh sách khách hàng vào phần tử có id "showAllListCustomerLucky"
+        function showAllListCustomer() {
+            var container = document.getElementById("showAllListCustomerLucky");
+            var ul = document.createElement("ul");
+            danhSachKhachHangMayMan.forEach(function (khachHang) {
+                var soKiTuCheNgauNhien = Math.random() < 0.5 ? 2 : 3;
+                var thongTinChe = cheTenVaHienThiSoTien(khachHang.ten, soKiTuCheNgauNhien);
+
+                var li = document.createElement("li");
+                li.innerHTML = ` <span class="span1">Tài khoản:<em>${thongTinChe.tenChe}</em></span>
+                                <span class="span2">Lì <em>${thongTinChe.soTien}</em> XU 🧧</span>
+                                `;
+                ul.appendChild(li);
+                console.log(thongTinChe.tenChe)
+                console.log(thongTinChe.soTien)
+
+            });
+
+            container.appendChild(ul);
+        }
+
+        // Gọi hàm hiển thị danh sách khi trang web được tải
+
+        showAllListCustomer();
+        document.addEventListener('DOMContentLoaded', function () {
+            const numberOfEnvelopes = 10000;
+            const totalFallTime = 15; //15 phút
+            const delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
+
+            for (let i = 0; i < numberOfEnvelopes; i++) {
+                if(i > 10){
+                    return ;
+                }
+                createLuckyMoney(i * delayBetweenEnvelopes);
+                
+            }
+        });
+
+        function createLuckyMoney(delay) {
+            const luckyMoney = document.createElement('img');
+            luckyMoney.classList.add('lucky-money');
+            luckyMoney.src = 'image/hongbao.png';
+
+            // Random chiều rộng và chiều cao
+            const randomWidth = Math.floor(Math.random() * 50) + 80; // Giả sử giới hạn chiều rộng từ 20 đến 70
+            const randomHeight = Math.floor(Math.random() * 50) + 140; // Giả sử giới hạn chiều cao từ 20 đến 70
+
+            luckyMoney.style.width = randomWidth + 'px';
+            luckyMoney.style.height = randomHeight + 'px';
+
+            const startPosition = Math.random() * window.innerWidth;
+            luckyMoney.style.left = startPosition + 'px';
+            luckyMoney.style.animationDuration = '10s';
+            luckyMoney.style.animationDelay = delay + 's';
+
+            document.getElementById('lucky-money-container').appendChild(luckyMoney);
+
+            luckyMoney.addEventListener('animationiteration', function () {
+                luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>
