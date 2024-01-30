@@ -1,7 +1,7 @@
 @charset "utf-8";
 *{ margin:0; padding:0;}
 
-body{ font: 16px/1.8 'Roboto Condensed'; color: #000; background: url(./image/banner.jpg) top center no-repeat #d0000d; overflow-x: hidden;}
+body{ font: 16px/1.8 'Roboto Condensed'; color: #000; background: url(image/banner.jpg) top center no-repeat #d0000d; overflow-x: hidden;}
 a:hover img,img{ border:none;}
 img { vertical-align: middle;}
 ul{ list-style:none;}
@@ -23,16 +23,16 @@ input[type=text], select {-webkit-appearance: none }
 .header { height: 78px; padding-top: 22px; text-align: center;}
 .header ul { font-size: 0;}
 .header ul li { display: inline; margin: 0 6px;}
-.header ul li a { width: 118px; height: 54px; line-height: 40px; color: #fff; font-size: 16px; display: inline-block; background: url(./image/nav.png) 0 0 no-repeat;}
+.header ul li a { width: 118px; height: 54px; line-height: 40px; color: #fff; font-size: 16px; display: inline-block; background: url(image/nav.png) 0 0 no-repeat;}
 .header ul li a:hover { background-position: 0 -60px;}
 
 .banner { height: 800px; overflow: hidden;}
-.banner .time { width: 566px; height: 190px; margin: 445px auto 0 auto; text-align: center; background: url(./image/time-bg.png) top center no-repeat; position: relative;}
+.banner .time { width: 566px; height: 190px; margin: 445px auto 0 auto; text-align: center; background: url(image/time-bg.png) top center no-repeat; position: relative;}
 .banner .time dl {}
 .banner .time dl dt { height: 48px; line-height: 60px; letter-spacing: 0px; color: #fff; font-size: 34px; font-weight: bold;}
 .banner .time dl dt strong {}
 .banner .time dl dd { width: 100%; height: 60px; font-size: 28px; font-weight: bold; position: absolute; left: 0; top: 72px;}
-.banner .time dl dd span { width: 70px; height: 60px; line-height: 59px; margin: 0 8px 0 18px; font-size: 35px; font-weight: bold; color: #ff0; background: #000; display: inline-block; background: url(./image/time-span.png) 0 0 no-repeat;}
+.banner .time dl dd span { width: 70px; height: 60px; line-height: 59px; margin: 0 8px 0 18px; font-size: 35px; font-weight: bold; color: #ff0; background: #000; display: inline-block; background: url(image/time-span.png) 0 0 no-repeat;}
 
 #div_left{
     position: relative;top: 80px;display: none;color: #000;
@@ -42,7 +42,7 @@ input[type=text], select {-webkit-appearance: none }
     padding-left: 84px;
 }
 #leftred{
-    background: url(./image/jc.png) top center no-repeat;
+    background: url(image/jc.png) top center no-repeat;
     font-size: 26px;font-weight:bold;
     color: #ff0;
     letter-spacing:14.5px;
@@ -53,13 +53,13 @@ input[type=text], select {-webkit-appearance: none }
 }
 
 .w1000 { width: 1000px; margin: 0 auto;}
-.tit {  height: 73px; line-height: 61px; text-align: center; font-size: 32px; font-weight: bold; color: #e20000; background: url(./image/tit.png) top center no-repeat;}
-.box { background: url(./image/box-bg.png) top center repeat-y;}
-.box-foot { height: 29px; margin-bottom: 21px; background: url(./image/box-foot.png) top center no-repeat;}
+.tit {  height: 73px; line-height: 61px; text-align: center; font-size: 32px; font-weight: bold; color: #e20000; background: url(image/tit.png) top center no-repeat;}
+.box { background: url(image/box-bg.png) top center repeat-y;}
+.box-foot { height: 29px; margin-bottom: 21px; background: url(image/box-foot.png) top center no-repeat;}
 
 .mingdan { padding: 20px 0 15px 0; font-size: 14px;}
 .dowebok {  height: 200px;}
-.dowebok ul { padding: 0 40px; background: url(./image/mingdan-line.png) top center repeat-y;}
+.dowebok ul { padding: 0 40px; background: url(image/mingdan-line.png) top center repeat-y;}
 .dowebok ul li { float: left; width: 50%;}
 .dowebok ul li span { display: inline-block;}
 .dowebok ul li span em { font-style: normal;}
@@ -84,10 +84,10 @@ input[type=text], select {-webkit-appearance: none }
 #tan_box:after {content:"";display: inline-block;vertical-align: middle;height: 100%;width: 0;}
 .tan_box {display: inline-block; *display: inline; *zoom:1; vertical-align: middle;position: relative;right: -100%; width: 600px; *margin-top: 150px; text-align: left; color: #fff; font-size: 16px; line-height: 28px; border-radius: 10px; box-shadow: 0 3px 20px rgba(0,0,0,.3);}
 .tan_box2 {display: inline-block; *display: inline; *zoom:1; vertical-align: middle;position: relative;right: -100%;  *margin-top: 150px; text-align: left; color: #fff; font-size: 16px; line-height: 28px; border-radius: 10px; }
-.tan_tit { height: 50px; line-height: 50px; padding: 0 15px 0 25px; border-top-left-radius: 10px; border-top-right-radius: 10px; background: url(./image/tan_tit.png) 0 0 repeat-x;}
+.tan_tit { height: 50px; line-height: 50px; padding: 0 15px 0 25px; border-top-left-radius: 10px; border-top-right-radius: 10px; background: url(image/tan_tit.png) 0 0 repeat-x;}
 .tan_tit h2 { font-size: 20px; font-weight: bold; color: #ff0;}
-.tan_tit span { float: right; width: 30px; height: 30px; border-radius: 20px; margin-top: 9px; background: url(./image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block;}
-.tan_tit span:hover { background: url(./image/tan_close.png) top center no-repeat #dc0000;}
+.tan_tit span { float: right; width: 30px; height: 30px; border-radius: 20px; margin-top: 9px; background: url(image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block;}
+.tan_tit span:hover { background: url(image/tan_close.png) top center no-repeat #dc0000;}
 .tan_con { padding: 30px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background: #bd0d0b;}
 .tan_con p { line-height: 35px; text-align: center; font-size: 18px; font-weight: bold; color: #ff0;}
 
@@ -97,19 +97,19 @@ input[type=text], select {-webkit-appearance: none }
 #loginDialog #tan_box:after {content:"";display: inline-block;vertical-align: middle;height: 100%;width: 0;}
 #loginDialog .tan_box {display: inline-block; *display: inline; *zoom:1; vertical-align: middle;position: relative;right: -100%; width: 600px; *margin-top: 150px; text-align: left; color: #fff; font-size: 16px; line-height: 28px; border-radius: 10px; box-shadow: 0 3px 20px rgba(0,0,0,.3);}
 #loginDialog .tan_box2 {display: inline-block; *display: inline; *zoom:1; vertical-align: middle;position: relative;right: -100%; *margin-top: 150px; text-align: left; color: #fff; font-size: 16px; line-height: 28px; border-radius: 10px;}
-#loginDialog .tan_tit { height: 50px; line-height: 50px; padding: 0 15px 0 25px; border-top-left-radius: 10px; border-top-right-radius: 10px; background: url(./image/tan_tit.png) 0 0 repeat-x;}
+#loginDialog .tan_tit { height: 50px; line-height: 50px; padding: 0 15px 0 25px; border-top-left-radius: 10px; border-top-right-radius: 10px; background: url(image/tan_tit.png) 0 0 repeat-x;}
 #loginDialog .tan_tit h2 { font-size: 20px; font-weight: bold; color: #ff0;}
-#loginDialog .tan_tit span { float: right; width: 30px; height: 30px; border-radius: 20px; margin-top: 9px; background: url(./image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block;}
-#loginDialog .tan_tit span:hover { background: url(./image/tan_close.png) top center no-repeat #dc0000;}
-#loginDialog .tan_con { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background: url(./image/login_bg.png);width: 300px;
+#loginDialog .tan_tit span { float: right; width: 30px; height: 30px; border-radius: 20px; margin-top: 9px; background: url(image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block;}
+#loginDialog .tan_tit span:hover { background: url(image/tan_close.png) top center no-repeat #dc0000;}
+#loginDialog .tan_con { border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; background: url(image/login_bg.png);width: 300px;
     height: 341px;padding-top:180px;}
 #loginDialog .tan_con p { line-height: 35px; text-align: center; font-size: 18px; font-weight: bold; color: #ff0;}
-.closeLogin{position:absolute;right:-8px;top:30px;background:url(./image/closelogin.png);width:40px;height:40px;cursor:pointer;}
+.closeLogin{position:absolute;right:-8px;top:30px;background:url(image/closelogin.png);width:40px;height:40px;cursor:pointer;}
 
 .hb_cx {}
 .hb_cx span { width: 130px; color: #ff0; font-weight: bold; font-size: 18px; text-align: right; display: inline-block;}
 .hb_cx input { width: 260px; height: 33px; line-height: 33px; padding: 0 10px; color: #fff; border: solid 1px #f00; border-right: 0; background: #8c0002;}
-.hb_cx a { width: 80px; height: 35px; line-height: 35px; text-align: center; color: #970e0c; font-size: 18px; font-weight: bold; border: 0; cursor: pointer; background: url(./image/btn_s.png) 0 0 no-repeat; display: inline-block;}
+.hb_cx a { width: 80px; height: 35px; line-height: 35px; text-align: center; color: #970e0c; font-size: 18px; font-weight: bold; border: 0; cursor: pointer; background: url(image/btn_s.png) 0 0 no-repeat; display: inline-block;}
 .hb_cx a:hover { background-position: 0 -35px;}
 .hb_zong { height: 50px; line-height: 50px; margin-top: 20px; text-align: center; border: solid 1px #e70000; background: #8c0002;}
 .hb_zong span { font-weight: bold; color: #ff0; font-size: 20px;}
@@ -121,23 +121,23 @@ input[type=text], select {-webkit-appearance: none }
 .hb_sr span, a.register { width: 120px; color: #ff0; font-weight: bold; font-size: 18px; /*text-align: right;*/ display: inline-block;}
 .hb_sr input { width: 260px; height: 43px; line-height: 33px; color: #000; padding: 0 10px; border: solid 1px #f00; background: #ffffff;text-align:center}
 .hb_sr2 {text-align:center;padding:20px 0;}
-.hb_sr2 a#check { width: 140px; height: 142px; line-height: 55px; text-align: center; color: #970e0c; font-size: 30px; font-weight: bold; border: 0; cursor: pointer; background: url(./image/qiang.png) 0 0 no-repeat; display: inline-block;background-size:100% 100%;}
+.hb_sr2 a#check { width: 140px; height: 142px; line-height: 55px; text-align: center; color: #970e0c; font-size: 30px; font-weight: bold; border: 0; cursor: pointer; background: url(image/qiang.png) 0 0 no-repeat; display: inline-block;background-size:100% 100%;}
 .hb_sr2 p { color:#ffffff; text-align: center; }
 
 .btn { padding-top: 20px; text-align: center;}
-.btn a { width: 80px; height: 35px; line-height: 35px; text-align: center; color: #970e0c; font-size: 18px; font-weight: bold; border: 0; cursor: pointer; background: url(./image/btn_s.png) 0 0 no-repeat; display: inline-block;}
+.btn a { width: 80px; height: 35px; line-height: 35px; text-align: center; color: #970e0c; font-size: 18px; font-weight: bold; border: 0; cursor: pointer; background: url(image/btn_s.png) 0 0 no-repeat; display: inline-block;}
 .btn a:hover { color: #f00; background-position: 0 -35px;}
 
-.hongbao1 { width: 600px; height: 420px; margin-top: -210px; margin-left: -300px; text-align: center; background: url(./image/hongbao1.png) 0 0 no-repeat; position: fixed; top: 50%; left: 50%; z-index:10000;}
+.hongbao1 { width: 600px; height: 420px; margin-top: -210px; margin-left: -300px; text-align: center; background: url(image/hongbao1.png) 0 0 no-repeat; position: fixed; top: 50%; left: 50%; z-index:10000;}
 .hongbao1_colse {}
-.hongbao1_colse { width: 30px; height: 30px; background: url(./image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block; position: absolute; top: 10px; right: 10px;}
+.hongbao1_colse { width: 30px; height: 30px; background: url(image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block; position: absolute; top: 10px; right: 10px;}
 .hongbao1_colse:hover { background-position: top center;}
 .hongbao1_chai { width: 190px; height: 40px; line-height: 40px; margin-top: 330px; text-align: center; font-weight: bold; color: #970e0c; border-radius: 20px; background-image: linear-gradient(to top, #ff0, #fff); cursor: pointer; display: inline-block;}
 .hongbao1_chai:hover { color: #f00; background-image: linear-gradient(to bottom, #ff0, #fff);}
 
-.hongbao2 { width: 600px; height: 470px; margin-top: -235px; margin-left: -300px; text-align: center; background: url(./image/hongbao2.png) 0 0 no-repeat; position: fixed; top: 50%; left: 50%; z-index:10000;}
+.hongbao2 { width: 600px; height: 470px; margin-top: -235px; margin-left: -300px; text-align: center; background: url(image/hongbao2.png) 0 0 no-repeat; position: fixed; top: 50%; left: 50%; z-index:10000;}
 .hongbao2_colse {}
-.hongbao2_colse { width: 30px; height: 30px; background: url(./image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block; position: absolute; top: 50px; right: 10px;}
+.hongbao2_colse { width: 30px; height: 30px; background: url(image/tan_close.png) bottom center no-repeat; cursor: pointer; display: inline-block; position: absolute; top: 50px; right: 10px;}
 .hongbao2_colse:hover { background-position: top center;}
 .hongbao_s { height: 100px; line-height: 100px; padding-top: 185px; font-size: 54px; text-align: center; color: #f0a15f;}
 .hongbao_s em { font-style: normal;}
