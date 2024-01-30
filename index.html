@@ -1,5 +1,4 @@
 <html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,6 +19,7 @@
         });
     </script>
     <style>
+
         b {
             margin: 0 10px;
         }
@@ -47,13 +47,11 @@
                 transform: translateY(100vh);
             }
         }
-
         .custom-background {
             background-color: #f00924;
         }
     </style>
 </head>
-
 
 <body id="wrap" class="custom-background">
     <div id="lucky-money-container"></div>
@@ -93,8 +91,6 @@
                     </ul>
                 </div>
             </div>
-            
-          
             <!--Top end-->
         </div>
         <div class="box-foot"></div>
@@ -240,9 +236,6 @@
     <!--Login start-->
     <div class="dialog" id="loginDialog">
         <div class="tan_box2">
-            <!--<div class="tan_tit"><span class="closeDialog3"></span>-->
-            <!--    <h2>请输入会员帐号</h2>-->
-            <!--</div>-->
             <div class="tan_con">
                 <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
                 <div class="hb_sr">
@@ -279,7 +272,6 @@
     </div>
     <!--Result end-->
 
-
     <!--Alert start-->
     <div class="dialog" id="alertDialog" style="z-index:1000002 ">
         <div class="tan_box2" style="width:500px">
@@ -295,9 +287,6 @@
     </div>
     <!--Alert start-->
 
-
-    <!--Logs start-->
-    <!--Logs end-->
     <div class="black_bg" id="dialogBg"></div>
 
     <!-- Google tag (gtag.js) -->
@@ -329,87 +318,81 @@
         // end time
 
         // Mảng chứa thông tin khách hàng may mắn
-        var danhSachKhachHangMayMan = [
-        { ten : "tienhung101"},  { ten: "quochuy102"},  { ten: "ngochuong103"},  { ten: "hanhphuc104"},  { ten: "linhnga105"}, 
-  { ten : "thanhdat106"},  { ten: "hoanghiep107"},  { ten: "quochung108"},  { ten: "thanhthao109"},  { ten: "vanhieu110"}, 
-  { ten : "tuyethuong111"},  { ten: "minhthu112"},  { ten: "thithao113"},  { ten: "vanduong114"},  { ten: "tuananh115"}, 
-  { ten : "thuytrang116"},  { ten: "datnguyen117"},  { ten: "hanhviet118"},  { ten: "linhphuong119"},  { ten: "ngoctuyen120"}, 
-  { ten : "hoailong121"},  { ten: "nguyenthao122"},  { ten: "tientran123"},  { ten: "hongtruc124"},  { ten: "thanhluan125"}, 
-  { ten : "minhha126"},  { ten: "vuongquoc127"},  { ten: "huongngoc128"},  { ten: "nguyenhien129"},  { ten: "thithu130"}, 
-  { ten : "tanduc131"},  { ten: "quanghuy132"},  { ten: "hongquyen133"},  { ten: "tuanminh134"},  { ten: "tramphuong135"}, 
-  { ten : "thutrang136"},  { ten: "minhquan137"},  { ten: "thanhhuong138"},  { ten: "huynhnhu139"},  { ten: "huyenanh140"}, 
-  { ten : "thithuy141"},  { ten: "nguyenhuy142"},  { ten: "minhduc143"},  { ten: "quanghieu144"},  { ten: "trangphuc145"}, 
-  { ten : "quyentran146"},  { ten: "huynhquang147"},  { ten: "phamthu148"},  { ten: "thanhphong149"},  { ten: "huyhoang150"}, 
-  { ten : "hongchau151"},  { ten: "linhhuong152"},  { ten: "duyminh153"},  { ten: "thuyduong154"},  { ten: "ngoctu155"}, 
-  { ten : "quynhanh156"},  { ten: "hungtien157"},  { ten: "vuthu158"},  { ten: "hieuanh159"},  { ten: "lehoang160"}, 
-  { ten : "duonglam161"},  { ten: "ngoctu162"},  { ten: "minhduc163"},  { ten: "hainguyen164"},  { ten: "minhha165"}, 
-  { ten : "hanhtrinh166"},  { ten: "trantam167"},  { ten: "tienlong168"},  { ten: "truclinh169"},  { ten: "minhtu170"}, 
-  { ten : "phamtrinh171"},  { ten: "huynhhoa172"},  { ten: "nguyetanh173"},  { ten: "huyhung174"},  { ten: "tranquoc175"}, 
-  { ten : "tuyetmai176"},  { ten: "quangthinh177"},  { ten: "huynhthi178"},  { ten: "thuannghia179"},  { ten: "hoainam180"}, 
+        var accountLucky = [
+        { account : "tienhung101"},  { account: "quochuy102"},  { account: "ngochuong103"},  { account: "hanhphuc104"},  { account: "linhnga105"}, 
+  { account : "thanhdat106"},  { account: "hoanghiep107"},  { account: "quochung108"},  { account: "thanhthao109"},  { account: "vanhieu110"}, 
+  { account : "tuyethuong111"},  { account: "minhthu112"},  { account: "thithao113"},  { account: "vanduong114"},  { account: "tuananh115"}, 
+  { account : "thuytrang116"},  { account: "datnguyen117"},  { account: "hanhviet118"},  { account: "linhphuong119"},  { account: "ngoctuyen120"}, 
+  { account : "hoailong121"},  { account: "nguyenthao122"},  { account: "tientran123"},  { account: "hongtruc124"},  { account: "thanhluan125"}, 
+  { account : "minhha126"},  { account: "vuongquoc127"},  { account: "huongngoc128"},  { account: "nguyenhien129"},  { account: "thithu130"}, 
+  { account : "tanduc131"},  { account: "quanghuy132"},  { account: "hongquyen133"},  { account: "tuanminh134"},  { account: "tramphuong135"}, 
+  { account : "thutrang136"},  { account: "minhquan137"},  { account: "thanhhuong138"},  { account: "huynhnhu139"},  { account: "huyenanh140"}, 
+  { account : "thithuy141"},  { account: "nguyenhuy142"},  { account: "minhduc143"},  { account: "quanghieu144"},  { account: "trangphuc145"}, 
+  { account : "quyentran146"},  { account: "huynhquang147"},  { account: "phamthu148"},  { account: "thanhphong149"},  { account: "huyhoang150"}, 
+  { account : "hongchau151"},  { account: "linhhuong152"},  { account: "duyminh153"},  { account: "thuyduong154"},  { account: "ngoctu155"}, 
+  { account : "quynhanh156"},  { account: "hungtien157"},  { account: "vuthu158"},  { account: "hieuanh159"},  { account: "lehoang160"}, 
+  { account : "duonglam161"},  { account: "ngoctu162"},  { account: "minhduc163"},  { account: "hainguyen164"},  { account: "minhha165"}, 
+  { account : "hanhtrinh166"},  { account: "trantam167"},  { account: "tienlong168"},  { account: "truclinh169"},  { account: "minhtu170"}, 
+  { account : "phamtrinh171"},  { account: "huynhhoa172"},  { account: "nguyetanh173"},  { account: "huyhung174"},  { account: "tranquoc175"}, 
+  { account : "tuyetmai176"},  { account: "quangthinh177"},  { account: "huynhthi178"},  { account: "thuannghia179"},  { account: "hoainam180"}, 
             // Thêm các khách hàng khác nếu cần
         ];
 
         // Hàm để che phần tên của người dùng và hiển thị số tiền ngẫu nhiên
-        function cheTenVaHienThiSoTien(hoTen, soKiTuChe) {
-            var viTriGiua = Math.floor(hoTen.length / 3);
-            var phanDau = hoTen.substring(0, soKiTuChe);
-            var phanGiua = "*".repeat(hoTen.length - soKiTuChe * 2);
-            var phanCuoi = hoTen.substring(hoTen.length - soKiTuChe);
+        function randomAccountAndMoney(account, ramdomAccount) {
+            var viTriGiua = Math.floor(account.length / 3);
+            var phanDau = account.substring(0, account);
+            var phanGiua = "*".repeat(account.length - account * 2);
+            var phanCuoi = account.substring(account.length - account);
 
             // Tạo số tiền ngẫu nhiên từ 1000 đến 9999
-            var soTienNgauNhien = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+            var moneyRamdon = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
 
             return {
-                tenChe: phanDau + phanGiua + phanCuoi,
-                soTien: soTienNgauNhien
+                accountLucky: phanDau + phanGiua + phanCuoi,
+                moneyLucky: moneyRamdon
             };
         }
-        // Hàm để thêm danh sách khách hàng vào phần tử có id "showAllListCustomerLucky"
+        // Hàm để thêm danh sách khách hàng vào phần tử g
         function showAllListCustomer() {
             var container = document.getElementById("showAllListCustomerLucky");
             var ul = document.createElement("ul");
-            danhSachKhachHangMayMan.forEach(function (khachHang) {
-                var soKiTuCheNgauNhien = Math.random() < 0.5 ? 2 : 3;
-                var thongTinChe = cheTenVaHienThiSoTien(khachHang.ten, soKiTuCheNgauNhien);
+            accountLucky.forEach(function (account) {
+                var tam = Math.random() < 0.5 ? 2 : 3;
+                var thongTinChe = randomAccountAndMoney(account.account, tam);
 
                 var li = document.createElement("li");
-                li.innerHTML = ` <span class="span1">Tài khoản:<em>${thongTinChe.tenChe}</em></span>
-                                <span class="span2">Lì <em>${thongTinChe.soTien}</em> XU 🧧</span>
+                li.innerHTML = ` <span class="span1">Tài khoản:<em>${thongTinChe.accountLucky}</em></span>
+                                <span class="span2">Lì <em>${thongTinChe.moneyLucky}</em> XU 🧧</span>
                                 `;
                 ul.appendChild(li);
-                console.log(thongTinChe.tenChe)
-                console.log(thongTinChe.soTien)
 
             });
 
             container.appendChild(ul);
         }
-
         // Gọi hàm hiển thị danh sách khi trang web được tải
-
         showAllListCustomer();
         document.addEventListener('DOMContentLoaded', function () {
-            const numberOfEnvelopes = 10000;
-            const totalFallTime = 15; //15 phút
+            const numberOfEnvelopes = 10000; //(số lần rơi)
+            const totalFallTime = 15; //(totalFallTime:100) phút
             const delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
 
             for (let i = 0; i < numberOfEnvelopes; i++) {
-                if(i > 10){
-                    return ;
-                }
+                // if(i > 10){
+                //     return ;
+                // }
                 createLuckyMoney(i * delayBetweenEnvelopes);
                 
             }
         });
-
         function createLuckyMoney(delay) {
             const luckyMoney = document.createElement('img');
             luckyMoney.classList.add('lucky-money');
             luckyMoney.src = 'image/hongbao.png';
-
             // Random chiều rộng và chiều cao
-            const randomWidth = Math.floor(Math.random() * 50) + 80; // Giả sử giới hạn chiều rộng từ 20 đến 70
-            const randomHeight = Math.floor(Math.random() * 50) + 140; // Giả sử giới hạn chiều cao từ 20 đến 70
+            const randomWidth = Math.floor(Math.random() * 50) + 80;
+            const randomHeight = Math.floor(Math.random() * 50) + 140; 
 
             luckyMoney.style.width = randomWidth + 'px';
             luckyMoney.style.height = randomHeight + 'px';
@@ -418,17 +401,11 @@
             luckyMoney.style.left = startPosition + 'px';
             luckyMoney.style.animationDuration = '10s';
             luckyMoney.style.animationDelay = delay + 's';
-
             document.getElementById('lucky-money-container').appendChild(luckyMoney);
-
             luckyMoney.addEventListener('animationiteration', function () {
                 luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
             });
         }
     </script>
-
-
-
 </body>
-
 </html>
