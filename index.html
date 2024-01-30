@@ -1,411 +1,1495 @@
-<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="vi" style="font-size: 57.3333px;">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>THẦN TÀI LÌ XÌ - THANTAI.GG</title>
-    <link rel="icon" href="image/favicon.png" type="image/png" sizes="32x32">
-    <!-- mo lixi -->
-    <link href="https://cdn-bk.thantai.gg/lixi/style/ext.css" rel="stylesheet" type="text/css">
+    <!-- mở bao lì xì modal -->
+    <!-- <link href="images/ext.css" rel="stylesheet" type="text/css"> -->
+    <script>
+        var _apiPath = "/than-tai-li-xi/v2/";
+    </script>
+    <script src="jqueryv.js"></script>
+    <script src="java.js"></script>
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="jqueryv1.8.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="https://cdn-bk.thantai.gg/lixi/style/liMarquee.css">
-    <script src="https://cdn-bk.thantai.gg/lixi/style/jquery.js"></script>
-    <script>
-        $(function () {
-            $('.dowebok').liMarquee({
-                direction: 'up'
-            });
-        });
-    </script>
-    <style>
 
-        b {
-            margin: 0 10px;
-        }
-
-        #lucky-money-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .lucky-money {
-            position: absolute;
-            display: inline-block;
-            pointer-events: none;
-            transform: translateY(-100%);
-            animation: fall linear infinite;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100%);
-            }
-
-            100% {
-                transform: translateY(100vh);
-            }
-        }
-        .custom-background {
-            background-color: #f00924;
-        }
-    </style>
 </head>
+<style>
+    /* di động */
+    @media (max-width: 767px) {
+        .weCp {
+            display: none;
+        }
+    }
 
-<body id="wrap" class="custom-background">
-    <div id="lucky-money-container"></div>
-
-    <div class="header">
-        <ul class="clearfix">
-            <li><a target="_blank" href="/">Diễn đàn</a></li>
-            <li><a target="_blank" href="">Trực tiếp</a></li>
-            <li><a target="_blank" href="">Game dự
-                    đoán</a></li>
-
-            <li><a href="javascript:void(0);" id="showLoginDialog">Đăng nhập</a></li>
-        </ul>
-    </div>
-
-    <div class="banner">
-        <div class="time">
-            <dl>
-                <dt><strong id="div_title">BẮT ĐẦU SAU</strong></dt>
-                <div id="thoiGianConLaiContainer">
-                    <dd><span id="gio"></span>GIỜ<span id="phut"></span>PHÚT<span id="giay"></span>GIÂY</dd>
+    /* máy tính */
+    @media (min-width: 767px) {
+        .weMb {
+            display: none;
+        }
+    }
+</style>
+<body id="wrap">
+    <div class="weMb">
+        <nav class="clearfix">
+            <ul class="clearfix">
+                <li>
+                    <a href="/">
+                        <img alt="diễn đàn" src="images/nav-home.png">
+                        <span>Diễn
+                            Đàn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="o">
+                        <img alt="trực tiếp xổ số" src="images/nav-stream.png">
+                        <span>Trực
+                            Tiếp</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <img alt="event" src="images/nav-event.png">
+                        <span>Event</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" onclick="showDialog('#queryDialog');">
+                        <img alt="rút thưởng" src="images/nav-money.png">
+                        <span>Rút Thưởng</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <div class="banner">
+                <img alt="banner" src="images/banner.jpg">
+                <div class="time">
+                    <dl>
+                        <dt>
+                            <strong id="div_title" style="font-size: 14px; letter-spacing: 0">BẮT ĐẦU SAU</strong>
+                        </dt>
+                        <dd style="font-size: 14px">
+                            <span id="left_h1">15</span>
+                            GIỜ<span id="left_m1">12</span>
+                            PHÚT<span id="left_s1">46</span>
+                            GIÂY
+                        </dd>
+                    </dl>
+                    <div id="div_left">
+                        Tổng giải thưởng <span id="leftred">00000000</span>
+                        VNĐ
+                    </div>
                 </div>
-            </dl>
-            <div id="div_left">Tổng giải thưởng <span id="leftred">00000000</span>VNĐ</div>
-        </div>
-    </div>
-
-    <div class="w1000">
-        <h1 class="tit">TOP ĐOẠT LÌ XÌ</h1>
-        <div class="box mingdan">
-            <!--Top start-->
-            <div class="dowebok str_wrap str_vertical">
-                <div class="str_move str_origin" style="top: -389.6px;">
-                    <ul class="clearfix cy_up_ul">
-                        <div id="showAllListCustomerLucky">
+            </div>
+            <div class="mingdan">
+                <h1 class="tit">TOP ĐOẠT LÌ XÌ</h1>
+                <div class="box mingdan">
+                    <div class="box2">
+                        <!--获奖名单start-->
+                        <div class="dowebok str_wrap str_vertical">
+                            <div class="str_move str_origin" style="top: -28.5px;">
+                                <ul class="clearfix cy_up_ul">
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Hd***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>24993</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mi***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9086</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ys***3</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8269</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>03***0</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4205</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>an***i</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4541</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Qu***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>31455</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ak***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2264</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>an***2</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9056</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>du***p</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9359</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>va***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8345</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Qu***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5548</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>er***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6158</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>th***2</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4838</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>wz***4</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6640</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>AT***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1278</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>th***i</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6094</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>dc***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1039</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>rn***5</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5759</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Na***m</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6394</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>do***s</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3892</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ph***d</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6334</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ye***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3893</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>an***m</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8531</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>va***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8077</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***c</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1309</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>xo***c</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9190</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>tr***m</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4455</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Bx***j</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>13260</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***v</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8291</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ds***g</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>7647</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ng***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3833</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>kx***e</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4606</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***c</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>7847</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>qu***h</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3890</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mo***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9573</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Bu***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6454</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ka***s</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>25332</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ba***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9170</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***2</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4954</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ph***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1401</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8123</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mi***3</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2951</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>vo***u</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6589</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>xu***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2726</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>to***4</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6603</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Gi***b</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5337</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>hu***2</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5689</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>fh***5</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9207</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>lo***o</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3653</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ja***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1177</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>zc***1</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3401</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Nh***v</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9461</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Th***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8299</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mo***z</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2824</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>yf***x</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6579</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>lo***g</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4705</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ng***4</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8365</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>op***1</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1215</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>tt***d</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1590</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>vi***g</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>7675</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>gi***g</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5708</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ma***0</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6163</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>MD***x</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3973</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ho***6</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9763</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ba***4</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1986</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>kb***h</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5730</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>my***i</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8119</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>pu***i</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4548</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mo***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3984</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>at***6</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1588</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Ta***a</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3451</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ro***r</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9719</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ka***r</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1748</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Xj***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2083</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ta***u</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9134</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Du***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3670</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>va***a</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3961</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>lo***c</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2419</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>le***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2144</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>mu***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5195</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>tr***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9544</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Ph***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6569</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>na***t</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>9173</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>fg***c</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>7792</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ta***0</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6497</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>lu***5</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6523</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>hq***a</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4618</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Ti***e</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>1375</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>da***g</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>4287</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ma***7</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>6012</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>da***9</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>8485</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ku***N</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5177</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Qu***2</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3133</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>Xn***d</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>2268</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>co***n</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>5143</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="span1">
+                                            Tài khoản: <em>ti***8</em>
+                                        </span>
+                                        <span class="span2">
+                                            Lì xì <em>3246</em>
+                                            XU 🧧
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </ul>
-                </div>
-            </div>
-            <!--Top end-->
-        </div>
-        <div class="box-foot"></div>
-
-        <h2 class="tit">NỘI DUNG SỰ KIỆN</h2>
-        <div class="box box-txt" id="info1">
-            <font size="4">Đối tượng tham gia：Tất cả thành viên<br>
-                Thời gian bắt đầu sự kiện：Từ 05/09/2023<br>Thời gian kết thúc sự kiện：??/??/????<br>
-                Kết duyên tại diễn đàn Thần Tài [thantai.com]. Sau khi truy cập trang web, các bạn hoàn thành các bước
-                tạo tài khoản và điền đầy đủ thông tinh cá nhân đều có thể tham dự <strong>“MỖI NGÀY 3 ĐỢT THẦN TÀI LÌ
-                    XÌ”</strong>. Chỉ cần vào các mốc thời gian <strong>16:15, 17:15, 18:15</strong> truy cập vào diễn
-                đàn thần tài [ thantai.com] có thể tham dự đoạt lì xì. Số lượng lì xì có hạn, Thành viên may mắn nhất có
-                thể đoạt được 39.039 VNĐ! Vừa xem kết quả xổ số vừa nhận lì xì. Nhanh tay chia sẻ niềm vui hiếm có này
-                đến với mọi người xung quanh bạn!</font>
-            <p></p>
-            <table width="100%" border="1">
-                <thead>
-                    <tr>
-                        <th width="13%">
-                            <font size="4">Tổng giải thưởng</font>
-                        </th>
-                        <th width="13%">
-                            <font size="4">Các đợt mở lì xì</font>
-                        </th>
-                        <th width="13%">
-                            <font size="4">Giá trị mỗi lì xì (Ngẫu nhiên)</font>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="3" width="13%">
-                            <p align="center">
-                                <font size="4" color="#FF0000">
-                                    <span style="">Tổng giải thưởng mỗi đợt</span>
-                                </font><span style="color: #ff0000; ; ">
-                                    <font size="4"><br></font>
-                                </span>
-                                <font size="4" color="#FF0000">
-                                    <span style="">7.999.999đ 🧧</span>
-                                </font>
-                            </p>
-                        </td>
-                        <td width="13%" align="center">
-                            <span style="background-color: #FFFFFF">
-                                <font size="4">
-                                    <span style="">16:15 - 16:30</span>
-                                </font>
-                            </span>
-                        </td>
-                        <td rowspan="3" width="13%">
-                            <p align="center">
-                                <span
-                                    style="box-sizing:border-box; color:#ff0000; font-style:normal; font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; orphans:2; text-align:center; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; text-decoration-style:initial; text-decoration-color:initial; background-color:#ffffff">
-                                    <font size="4">500đ - 39.039đ 🧧</font>
-                                </span>
-                            </p>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td width="13%" align="center">
-                            <span style="background-color: #FFFFFF">
-                                <font size="4">
-                                    <span style="">17:15 - 17:30</span>
-                                </font>
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="13%" align="center">
-                            <span style="background-color: #FFFFFF">
-                                <font size="4">
-                                    <span>18:15 - 18:30</span>
-                                </font>
-                            </span>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th colspan="3">
-                            <font size="4">
-                                Mỗi ngày có 3 đợt đoạt lì xì - Hãy chuẩn bị đăng nhập tài khoản trước khi đoạt lì xì.
-                            </font>
-                        </th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <div class="box-foot"></div>
-
-        <h2 class="tit">QUY TẮC SỰ KIỆN</h2>
-        <div class="box box-txt" id="info2">
-            <p>
-                <font size="4">1. Thành viên tham gia đoạt lì xì với số lượng đông trong khi số lượng lì xì có hạn.
-                    Thành viên không đạt được lì xì có thể đợi đợt phát lì xì tiếp theo trong ngày hoặc vào ngày hôm
-                    sau.</font>
-            </p>
-            <p>
-                <font size="4">2. Xu từ lì xì sẽ được cộng thẳng vào tài khoản diễn đàn của bạn.</font>
-            </p>
-            <p>
-                <font size="4">3. Thời gian hoạt động lì xì này có hạn, không cố định thời gian mở và kết thúc hoạt
-                    động. Chỉ cần vào lúc 16:15,17:15,18:15 truy cập diễn đàn đều có thể tham dư.</font>
-            </p>
-            <p>
-                <font size="4">
-                    4. Xu từ lì xì là ngẫu nhiên, giá trị một bao lì xì cao nhất là 39.039 VNĐ (tỉ lệ cực thấp). Do thần
-                    tài lì xì số lượng có hạn, góp ý bạn trước giờ lì xì đăng nhập tài khoản chuẩn bị tốt.</font>
-            </p>
-            <p>
-                <font size="4">
-                    5. Hoạt động này được lập trình tự động, giá trị của lì xì tuân thủ theo xác suất nhẫu nhiên. Không
-                    có bất kỳ sự tham gia nào của con người. Giá trị của lì xì tùy thuộc vào tính toán của hệ thống,
-                    không được tranh cãi.</font>
-            </p>
-            <p>
-                <font size="4">6. Tránh sự khác biệt trong việc nắm bắt nội dung văn bản, diễn đàn Thần Tài sẽ là người
-                    đưa ra quyết định cuối cùng trong hoạt động khuyến mãi này.</font>
-            </p>
-            <p>
-                <font size="4">7. Khi tham gia sự kiện này, đồng nghĩa bạn đồng ý《Điều khoản và quy tắc của sự kiện》.
-                </font>
-            </p>
-            <p>
-                <font size="4">8. Những quy tắc và phần thưởng của sự kiện này có thể thay đổi theo thời gian để phù hợp
-                    với tình hình thực tế. Hãy thường xuyên theo dõi để cập nhật.</font>
-            </p>
-        </div>
-        <div class="box-foot"></div>
-    </div>
-
-    <div class="footer">Copyright © 2023 THANTAI.COM All Rights Reserved</div>
-
-    <!--Draw start-->
-    <div class="hongbao1 dialog flip" id="hbDialog" style="z-index:1000002 ">
-        <span class="hongbao1_colse closeDialog1"></span>
-        <span class="hongbao1_chai" id="draw">Mở lì xì</span>
-    </div>
-    <!--Draw end-->
-
-    <!--Login start-->
-    <div class="dialog" id="loginDialog">
-        <div class="tan_box2">
-            <div class="tan_con">
-                <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
-                <div class="hb_sr">
-                    <form id="form-login" method="POST" action="#">
-                        <input type="hidden" name="_token" value="84e8yh4T8eUnBru1Zx2pTeovyX5nnoIYosDgd3AR"> <span>ĐĂNG
-                            NHẬP</span>
-                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
-                        <input type="password" name="password" id="password" placeholder="Mật khẩu">
-                    </form>
-                </div>
-                <div class="hb_sr2">
-                    <a href="javascript:;" id="check"></a>
-                    <div class="login_method">
-                        Đăng nhập bằng
-                        <a href=""><img
-                                src="" alt="login with google"
-                                width="24" height="24"></a>
-                    </div>
-                    <div>
-                        <a class="register" href="">Đăng ký</a>
+                        <script>
+                            $(function () {
+                                $('.dowebok').liMarquee({
+                                    direction: 'up'
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
+            <div class="view-detail">
+                <a href="">
+                    <img src="images/view-txt.png" alt="Chi tiết sự kiện" title="Chi tiết sự kiện">
+                </a>
+                <h2 style="display: none">Chi tiết sự kiện</h2>
+            </div>
+            <!--Login start-->
+            <div class="dialog" id="loginDialog">
+                <div class="tan_box2">
+                    <div class="tan_con">
+                        <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
+                        <div class="hb_sr">
+                            <form id="form-login" method="POST" action="#">
+                                <input type="hidden" name="_token" value="C8NXA3wWWNvbaFM1s6Lb5aHaFLAkiiIXZVcsvNwx">
+                                <span>ĐĂNG NHẬP</span>
+                                <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+                                <input type="password" name="password" id="password" placeholder="Mật khẩu">
+                            </form>
+                        </div>
+                        <div class="hb_sr2">
+                            <a href="javascript:;" id="check"></a>
+                            <div class="login_method">
+                                Đăng nhập bằng
+
+                                <a href="">
+                                    <img src="images/google.png" alt="google" width="24" height="24">
+                                </a>
+                            </div>
+                            <div>
+                                <a class="register" href="">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Login end-->
+            <!--Draw start-->
+            <div class="hongbao1 dialog flip" id="hbDialog" style="z-index:1000002 ">
+                <span class="hongbao1_colse closeDialog1"></span>
+                <span class="hongbao1_chai" id="draw">Mở lì xì</span>
+            </div>
+            <!--Draw end-->
+            <!--Result start-->
+            <div class="hongbao2 dialog" id="resultDialog" style="z-index:1000002 ">
+                <span class="hongbao2_colse closeDialog1"></span>
+                <div class="hongbao_s">
+                    <em id="resultMoney">0.00</em>
+                </div>
+                <div class="">
+                    🧧<span id="resultTimes">0</span>
+                    🧧
+                </div>
+                <div class="hongbao_btn closeDialog1">
+                    <span>Đóng</span>
+                </div>
+            </div>
+            <!--Result end-->
+            <!--Alert start-->
+            <div class="dialog" id="alertDialog" style="z-index:1000002 ">
+                <div class="tan_box2">
+                    <div class="tan_tit">
+                        <span class="closeDialog31"></span>
+                        <h3>THÔNG BÁO</h3>
+                    </div>
+                    <div class="tan_con">
+                        <p id="alertInfo"></p>
+                        <div class="btn">
+                            <a href="javascript:void(0);" class="closeDialog4">OK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Alert start-->
+            <!--Logs start-->
+            <!--Logs end-->
+            <div class="black_bg" id="dialogBg"></div>
         </div>
     </div>
-    <!--Login end-->
+    <div class="weCp">
+        <div class="header">
+            <ul class="clearfix">
+                <li><a target="_blank" href="/">Diễn đàn</a></li>
+                <li><a target="_blank" href="https://thantai.gg/truc-tiep-xo-so">Trực tiếp</a></li>
+                <li><a target="_blank" href="https://thantai.gg/event">Game dự
+                        đoán</a></li>
 
-    <!--Result start-->
-    <div class="hongbao2 dialog" id="resultDialog" style="z-index:1000002 ">
-        <span class="hongbao2_colse closeDialog1"></span>
-        <div class="hongbao_s"><em id="resultMoney">0.00</em></div>
-        <div class="">🧧<span id="resultTimes">0</span>🧧</div>
-        <div class="hongbao_btn closeDialog1"><span>Đóng</span></div>
-    </div>
-    <!--Result end-->
+                <li><a href="javascript:void(0);" id="showLoginDialog">Đăng nhập</a></li>
+            </ul>
+        </div>
 
-    <!--Alert start-->
-    <div class="dialog" id="alertDialog" style="z-index:1000002 ">
-        <div class="tan_box2" style="width:500px">
-            <div class="tan_tit">
-                <span class="closeDialog31"></span>
-                <h3>THÔNG BÁO</h3>
-            </div>
-            <div class="tan_con">
-                <p id="alertInfo"></p>
-                <div class="btn"><a href="javascript:void(0);" class="closeDialog4">OK</a></div>
+        <div class="banner">
+            <div class="time">
+                <dl>
+                    <dt><strong id="div_title">BẮT ĐẦU SAU</strong></dt>
+                    <dd><span id="left_h1">17</span>GIỜ<span id="left_m1">22</span>PHÚT<span id="left_s1">50</span>GIÂY
+                    </dd>
+                </dl>
+                <div id="div_left">Tổng giải thưởng <span id="leftred">00000000</span>VNĐ</div>
             </div>
         </div>
+
+        <div class="w1000">
+            <h1 class="tit">TOP ĐOẠT LÌ XÌ</h1>
+            <div class="box mingdan">
+                <!--Top start-->
+                <div class="dowebok str_wrap str_vertical">
+                    <div class="str_move str_origin" style="top: -124.85px;">
+                        <ul class="clearfix cy_up_ul">
+                            <li><span class="span1">Tài khoản: <em>Hd***n</em></span><span class="span2">Lì xì
+                                    <em>24993</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mi***n</em></span><span class="span2">Lì xì
+                                    <em>9086</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ys***3</em></span><span class="span2">Lì xì
+                                    <em>8269</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>03***0</em></span><span class="span2">Lì xì
+                                    <em>4205</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>an***i</em></span><span class="span2">Lì xì
+                                    <em>4541</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Qu***9</em></span><span class="span2">Lì xì
+                                    <em>31455</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ak***9</em></span><span class="span2">Lì xì
+                                    <em>2264</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>an***2</em></span><span class="span2">Lì xì
+                                    <em>9056</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>du***p</em></span><span class="span2">Lì xì
+                                    <em>9359</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>va***n</em></span><span class="span2">Lì xì
+                                    <em>8345</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Qu***8</em></span><span class="span2">Lì xì
+                                    <em>5548</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>er***7</em></span><span class="span2">Lì xì
+                                    <em>6158</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>th***2</em></span><span class="span2">Lì xì
+                                    <em>4838</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>wz***4</em></span><span class="span2">Lì xì
+                                    <em>6640</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>AT***n</em></span><span class="span2">Lì xì
+                                    <em>1278</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>th***i</em></span><span class="span2">Lì xì
+                                    <em>6094</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>dc***8</em></span><span class="span2">Lì xì
+                                    <em>1039</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>rn***5</em></span><span class="span2">Lì xì
+                                    <em>5759</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Na***m</em></span><span class="span2">Lì xì
+                                    <em>6394</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>do***s</em></span><span class="span2">Lì xì
+                                    <em>3892</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ph***d</em></span><span class="span2">Lì xì
+                                    <em>6334</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ye***8</em></span><span class="span2">Lì xì
+                                    <em>3893</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>an***m</em></span><span class="span2">Lì xì
+                                    <em>8531</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>va***n</em></span><span class="span2">Lì xì
+                                    <em>8077</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***c</em></span><span class="span2">Lì xì
+                                    <em>1309</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>xo***c</em></span><span class="span2">Lì xì
+                                    <em>9190</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>tr***m</em></span><span class="span2">Lì xì
+                                    <em>4455</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Bx***j</em></span><span class="span2">Lì xì
+                                    <em>13260</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***v</em></span><span class="span2">Lì xì
+                                    <em>8291</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ds***g</em></span><span class="span2">Lì xì
+                                    <em>7647</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ng***9</em></span><span class="span2">Lì xì
+                                    <em>3833</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>kx***e</em></span><span class="span2">Lì xì
+                                    <em>4606</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***c</em></span><span class="span2">Lì xì
+                                    <em>7847</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>qu***h</em></span><span class="span2">Lì xì
+                                    <em>3890</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mo***9</em></span><span class="span2">Lì xì
+                                    <em>9573</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Bu***n</em></span><span class="span2">Lì xì
+                                    <em>6454</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ka***s</em></span><span class="span2">Lì xì
+                                    <em>25332</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ba***8</em></span><span class="span2">Lì xì
+                                    <em>9170</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***2</em></span><span class="span2">Lì xì
+                                    <em>4954</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ph***8</em></span><span class="span2">Lì xì
+                                    <em>1401</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***n</em></span><span class="span2">Lì xì
+                                    <em>8123</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mi***3</em></span><span class="span2">Lì xì
+                                    <em>2951</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>vo***u</em></span><span class="span2">Lì xì
+                                    <em>6589</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>xu***8</em></span><span class="span2">Lì xì
+                                    <em>2726</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>to***4</em></span><span class="span2">Lì xì
+                                    <em>6603</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Gi***b</em></span><span class="span2">Lì xì
+                                    <em>5337</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>hu***2</em></span><span class="span2">Lì xì
+                                    <em>5689</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>fh***5</em></span><span class="span2">Lì xì
+                                    <em>9207</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>lo***o</em></span><span class="span2">Lì xì
+                                    <em>3653</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ja***7</em></span><span class="span2">Lì xì
+                                    <em>1177</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>zc***1</em></span><span class="span2">Lì xì
+                                    <em>3401</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Nh***v</em></span><span class="span2">Lì xì
+                                    <em>9461</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Th***8</em></span><span class="span2">Lì xì
+                                    <em>8299</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mo***z</em></span><span class="span2">Lì xì
+                                    <em>2824</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>yf***x</em></span><span class="span2">Lì xì
+                                    <em>6579</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>lo***g</em></span><span class="span2">Lì xì
+                                    <em>4705</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ng***4</em></span><span class="span2">Lì xì
+                                    <em>8365</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>op***1</em></span><span class="span2">Lì xì
+                                    <em>1215</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>tt***d</em></span><span class="span2">Lì xì
+                                    <em>1590</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>vi***g</em></span><span class="span2">Lì xì
+                                    <em>7675</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>gi***g</em></span><span class="span2">Lì xì
+                                    <em>5708</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ma***0</em></span><span class="span2">Lì xì
+                                    <em>6163</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>MD***x</em></span><span class="span2">Lì xì
+                                    <em>3973</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ho***6</em></span><span class="span2">Lì xì
+                                    <em>9763</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ba***4</em></span><span class="span2">Lì xì
+                                    <em>1986</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>kb***h</em></span><span class="span2">Lì xì
+                                    <em>5730</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>my***i</em></span><span class="span2">Lì xì
+                                    <em>8119</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>pu***i</em></span><span class="span2">Lì xì
+                                    <em>4548</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mo***7</em></span><span class="span2">Lì xì
+                                    <em>3984</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>at***6</em></span><span class="span2">Lì xì
+                                    <em>1588</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Ta***a</em></span><span class="span2">Lì xì
+                                    <em>3451</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ro***r</em></span><span class="span2">Lì xì
+                                    <em>9719</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ka***r</em></span><span class="span2">Lì xì
+                                    <em>1748</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Xj***n</em></span><span class="span2">Lì xì
+                                    <em>2083</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ta***u</em></span><span class="span2">Lì xì
+                                    <em>9134</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Du***9</em></span><span class="span2">Lì xì
+                                    <em>3670</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>va***a</em></span><span class="span2">Lì xì
+                                    <em>3961</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>lo***c</em></span><span class="span2">Lì xì
+                                    <em>2419</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>le***7</em></span><span class="span2">Lì xì
+                                    <em>2144</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>mu***7</em></span><span class="span2">Lì xì
+                                    <em>5195</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>tr***n</em></span><span class="span2">Lì xì
+                                    <em>9544</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Ph***n</em></span><span class="span2">Lì xì
+                                    <em>6569</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>na***t</em></span><span class="span2">Lì xì
+                                    <em>9173</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>fg***c</em></span><span class="span2">Lì xì
+                                    <em>7792</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ta***0</em></span><span class="span2">Lì xì
+                                    <em>6497</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>lu***5</em></span><span class="span2">Lì xì
+                                    <em>6523</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>hq***a</em></span><span class="span2">Lì xì
+                                    <em>4618</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Ti***e</em></span><span class="span2">Lì xì
+                                    <em>1375</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>da***g</em></span><span class="span2">Lì xì
+                                    <em>4287</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ma***7</em></span><span class="span2">Lì xì
+                                    <em>6012</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>da***9</em></span><span class="span2">Lì xì
+                                    <em>8485</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ku***N</em></span><span class="span2">Lì xì
+                                    <em>5177</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Qu***2</em></span><span class="span2">Lì xì
+                                    <em>3133</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>Xn***d</em></span><span class="span2">Lì xì
+                                    <em>2268</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>co***n</em></span><span class="span2">Lì xì
+                                    <em>5143</em> XU 🧧</span></li>
+                            <li><span class="span1">Tài khoản: <em>ti***8</em></span><span class="span2">Lì xì
+                                    <em>3246</em> XU 🧧</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <link rel="stylesheet" href="https://cdn-bk.thantai.gg/lixi/style/liMarquee.css">
+                <script src="https://cdn-bk.thantai.gg/lixi/style/jquery.js"></script>
+                <script>
+                    $(function () {
+                        $('.dowebok').liMarquee({
+                            direction: 'up'
+                        });
+                    });
+                </script>
+                <!--Top end-->
+            </div>
+            <div class="box-foot"></div>
+
+            <h2 class="tit">NỘI DUNG SỰ KIỆN</h2>
+            <div class="box box-txt" id="info1">
+                <font size="4">Đối tượng tham gia：Tất cả thành viên<br>
+                    Thời gian bắt đầu sự kiện：Từ 05/09/2023<br>Thời gian kết thúc sự kiện：??/??/????<br>
+                    Kết duyên tại diễn đàn Thần Tài [thantai.com]. Sau khi truy cập trang web, các bạn hoàn thành các
+                    bước tạo tài khoản và điền đầy đủ thông tinh cá nhân đều có thể tham dự <strong>“MỖI NGÀY 3 ĐỢT THẦN
+                        TÀI LÌ XÌ”</strong>. Chỉ cần vào các mốc thời gian <strong>16:15, 17:15, 18:15</strong> truy cập
+                    vào diễn đàn thần tài [ thantai.com] có thể tham dự đoạt lì xì. Số lượng lì xì có hạn, Thành viên
+                    may mắn nhất có thể đoạt được 39.039 VNĐ! Vừa xem kết quả xổ số vừa nhận lì xì. Nhanh tay chia sẻ
+                    niềm vui hiếm có này đến với mọi người xung quanh bạn!</font>
+                <p></p>
+                <table width="100%" border="1">
+                    <thead>
+                        <tr>
+                            <th width="13%">
+                                <font size="4">Tổng giải thưởng</font>
+                            </th>
+                            <th width="13%">
+                                <font size="4">Các đợt mở lì xì</font>
+                            </th>
+                            <th width="13%">
+                                <font size="4">Giá trị mỗi lì xì (Ngẫu nhiên)</font>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="3" width="13%">
+                                <p align="center">
+                                    <font size="4" color="#FF0000">
+                                        <span style="">Tổng giải thưởng mỗi đợt</span>
+                                    </font><span style="color: #ff0000; ; ">
+                                        <font size="4"><br></font>
+                                    </span>
+                                    <font size="4" color="#FF0000">
+                                        <span style="">7.999.999đ 🧧</span>
+                                    </font>
+                                </p>
+                            </td>
+                            <td width="13%" align="center">
+                                <span style="background-color: #FFFFFF">
+                                    <font size="4">
+                                        <span style="">16:15 - 16:30</span>
+                                    </font>
+                                </span>
+                            </td>
+                            <td rowspan="3" width="13%">
+                                <p align="center">
+                                    <span
+                                        style="box-sizing:border-box; color:#ff0000; font-style:normal; font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; orphans:2; text-align:center; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; text-decoration-style:initial; text-decoration-color:initial; background-color:#ffffff">
+                                        <font size="4">500đ - 39.039đ 🧧</font>
+                                    </span>
+                                </p>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td width="13%" align="center">
+                                <span style="background-color: #FFFFFF">
+                                    <font size="4">
+                                        <span style="">17:15 - 17:30</span>
+                                    </font>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="13%" align="center">
+                                <span style="background-color: #FFFFFF">
+                                    <font size="4">
+                                        <span>18:15 - 18:30</span>
+                                    </font>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="3">
+                                <font size="4">
+                                    Mỗi ngày có 3 đợt đoạt lì xì - Hãy chuẩn bị đăng nhập tài khoản trước khi đoạt lì
+                                    xì.</font>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="box-foot"></div>
+
+            <h2 class="tit">QUY TẮC SỰ KIỆN</h2>
+            <div class="box box-txt" id="info2">
+                <p>
+                    <font size="4">1. Thành viên tham gia đoạt lì xì với số lượng đông trong khi số lượng lì xì có hạn.
+                        Thành viên không đạt được lì xì có thể đợi đợt phát lì xì tiếp theo trong ngày hoặc vào ngày hôm
+                        sau.</font>
+                </p>
+                <p>
+                    <font size="4">2. Xu từ lì xì sẽ được cộng thẳng vào tài khoản diễn đàn của bạn.</font>
+                </p>
+                <p>
+                    <font size="4">3. Thời gian hoạt động lì xì này có hạn, không cố định thời gian mở và kết thúc hoạt
+                        động. Chỉ cần vào lúc 16:15,17:15,18:15 truy cập diễn đàn đều có thể tham dư.</font>
+                </p>
+                <p>
+                    <font size="4">
+                        4. Xu từ lì xì là ngẫu nhiên, giá trị một bao lì xì cao nhất là 39.039 VNĐ (tỉ lệ cực thấp). Do
+                        thần tài lì xì số lượng có hạn, góp ý bạn trước giờ lì xì đăng nhập tài khoản chuẩn bị tốt.
+                    </font>
+                </p>
+                <p>
+                    <font size="4">
+                        5. Hoạt động này được lập trình tự động, giá trị của lì xì tuân thủ theo xác suất nhẫu nhiên.
+                        Không có bất kỳ sự tham gia nào của con người. Giá trị của lì xì tùy thuộc vào tính toán của hệ
+                        thống, không được tranh cãi.</font>
+                </p>
+                <p>
+                    <font size="4">6. Tránh sự khác biệt trong việc nắm bắt nội dung văn bản, diễn đàn Thần Tài sẽ là
+                        người đưa ra quyết định cuối cùng trong hoạt động khuyến mãi này.</font>
+                </p>
+                <p>
+                    <font size="4">7. Khi tham gia sự kiện này, đồng nghĩa bạn đồng ý《Điều khoản và quy tắc của sự
+                        kiện》.</font>
+                </p>
+                <p>
+                    <font size="4">8. Những quy tắc và phần thưởng của sự kiện này có thể thay đổi theo thời gian để phù
+                        hợp với tình hình thực tế. Hãy thường xuyên theo dõi để cập nhật.</font>
+                </p>
+            </div>
+            <div class="box-foot"></div>
+        </div>
+
+        <div class="footer">Copyright © 2023 THANTAI.COM All Rights Reserved</div>
+
+        <!--Draw start-->
+        <div class="hongbao1 dialog flip" id="hbDialog" style="z-index:1000002 ">
+            <span class="hongbao1_colse closeDialog1"></span>
+            <span class="hongbao1_chai" id="draw">Mở lì xì</span>
+        </div>
+        <!--Draw end-->
+
+        <!--Login start-->
+        <div class="dialog" id="loginDialog">
+            <div class="tan_box2">
+                <!--<div class="tan_tit"><span class="closeDialog3"></span>-->
+                <!--    <h2>请输入会员帐号</h2>-->
+                <!--</div>-->
+                <div class="tan_con">
+                    <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
+                    <div class="hb_sr">
+                        <form id="form-login" method="POST" action="#">
+                            <input type="hidden" name="_token" value="C8NXA3wWWNvbaFM1s6Lb5aHaFLAkiiIXZVcsvNwx">
+                            <span>ĐĂNG NHẬP</span>
+                            <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
+                            <input type="password" name="password" id="password" placeholder="Mật khẩu">
+                        </form>
+                    </div>
+                    <div class="hb_sr2">
+                        <a href="javascript:;" id="check"></a>
+                        <div class="login_method">
+                            Đăng nhập bằng
+                            <a href="https://thantai.gg/social/google"><img
+                                    src="https://cdn-bk.thantai.gg/images/icons/google.png" alt="login with google"
+                                    width="24" height="24"></a>
+                        </div>
+                        <div>
+                            <a class="register" href="https://thantai.gg/register">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Login end-->
+
+        <!--Result start-->
+        <div class="hongbao2 dialog" id="resultDialog" style="z-index:1000002 ">
+            <span class="hongbao2_colse closeDialog1"></span>
+            <div class="hongbao_s"><em id="resultMoney">0.00</em></div>
+            <div class="">🧧<span id="resultTimes">0</span>🧧</div>
+            <div class="hongbao_btn closeDialog1"><span>Đóng</span></div>
+        </div>
+        <!--Result end-->
+
+
+        <!--Alert start-->
+        <div class="dialog" id="alertDialog" style="z-index:1000002 ">
+            <div class="tan_box2" style="width:500px">
+                <div class="tan_tit">
+                    <span class="closeDialog31"></span>
+                    <h3>THÔNG BÁO</h3>
+                </div>
+                <div class="tan_con">
+                    <p id="alertInfo"></p>
+                    <div class="btn"><a href="javascript:void(0);" class="closeDialog4">OK</a></div>
+                </div>
+            </div>
+        </div>
+        <!--Alert start-->
+
+
+        <!--Logs start-->
+        <!--Logs end-->
+        <div class="black_bg" id="dialogBg"></div>
+
+        <!-- Google tag (gtag.js) -->
+
+
     </div>
-    <!--Alert start-->
 
-    <div class="black_bg" id="dialogBg"></div>
-
-    <!-- Google tag (gtag.js) -->
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QTEXTL6045"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-QTEXTL6045');
-
-        function tinhThoiGianDen5Gio() {
-            var thoiGianHienTai = new Date();
-            var thoiGian5Gio = new Date(thoiGianHienTai.getFullYear(), thoiGianHienTai.getMonth(), thoiGianHienTai.getDate(), 16, 17, 0, 0);
-            var khoangThoiGian = thoiGian5Gio - thoiGianHienTai;
-            var gio = Math.floor(khoangThoiGian / (1000 * 60 * 60));
-            var phut = Math.floor((khoangThoiGian % (1000 * 60 * 60)) / (1000 * 60));
-            var giay = Math.floor((khoangThoiGian % (1000 * 60)) / 1000);
-            document.getElementById("gio").innerHTML = gio;
-            document.getElementById("phut").innerHTML = phut;
-            document.getElementById("giay").innerHTML = giay;
-        }
-        tinhThoiGianDen5Gio();
-        var capNhatInterval = setInterval(tinhThoiGianDen5Gio, 1000);
-
-        // end time
-
-        // Mảng chứa thông tin khách hàng may mắn
-        var accountLucky = [
-        { account : "tienhung101"},  { account: "quochuy102"},  { account: "ngochuong103"},  { account: "hanhphuc104"},  { account: "linhnga105"}, 
-  { account : "thanhdat106"},  { account: "hoanghiep107"},  { account: "quochung108"},  { account: "thanhthao109"},  { account: "vanhieu110"}, 
-  { account : "tuyethuong111"},  { account: "minhthu112"},  { account: "thithao113"},  { account: "vanduong114"},  { account: "tuananh115"}, 
-  { account : "thuytrang116"},  { account: "datnguyen117"},  { account: "hanhviet118"},  { account: "linhphuong119"},  { account: "ngoctuyen120"}, 
-  { account : "hoailong121"},  { account: "nguyenthao122"},  { account: "tientran123"},  { account: "hongtruc124"},  { account: "thanhluan125"}, 
-  { account : "minhha126"},  { account: "vuongquoc127"},  { account: "huongngoc128"},  { account: "nguyenhien129"},  { account: "thithu130"}, 
-  { account : "tanduc131"},  { account: "quanghuy132"},  { account: "hongquyen133"},  { account: "tuanminh134"},  { account: "tramphuong135"}, 
-  { account : "thutrang136"},  { account: "minhquan137"},  { account: "thanhhuong138"},  { account: "huynhnhu139"},  { account: "huyenanh140"}, 
-  { account : "thithuy141"},  { account: "nguyenhuy142"},  { account: "minhduc143"},  { account: "quanghieu144"},  { account: "trangphuc145"}, 
-  { account : "quyentran146"},  { account: "huynhquang147"},  { account: "phamthu148"},  { account: "thanhphong149"},  { account: "huyhoang150"}, 
-  { account : "hongchau151"},  { account: "linhhuong152"},  { account: "duyminh153"},  { account: "thuyduong154"},  { account: "ngoctu155"}, 
-  { account : "quynhanh156"},  { account: "hungtien157"},  { account: "vuthu158"},  { account: "hieuanh159"},  { account: "lehoang160"}, 
-  { account : "duonglam161"},  { account: "ngoctu162"},  { account: "minhduc163"},  { account: "hainguyen164"},  { account: "minhha165"}, 
-  { account : "hanhtrinh166"},  { account: "trantam167"},  { account: "tienlong168"},  { account: "truclinh169"},  { account: "minhtu170"}, 
-  { account : "phamtrinh171"},  { account: "huynhhoa172"},  { account: "nguyetanh173"},  { account: "huyhung174"},  { account: "tranquoc175"}, 
-  { account : "tuyetmai176"},  { account: "quangthinh177"},  { account: "huynhthi178"},  { account: "thuannghia179"},  { account: "hoainam180"}, 
-            // Thêm các khách hàng khác nếu cần
-        ];
-
-        // Hàm để che phần tên của người dùng và hiển thị số tiền ngẫu nhiên
-        function randomAccountAndMoney(account, ramdomAccount) {
-            var viTriGiua = Math.floor(account.length / 3);
-            var phanDau = account.substring(0, account);
-            var phanGiua = "*".repeat(account.length - account * 2);
-            var phanCuoi = account.substring(account.length - account);
-
-            // Tạo số tiền ngẫu nhiên từ 1000 đến 9999
-            var moneyRamdon = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-
-            return {
-                accountLucky: phanDau + phanGiua + phanCuoi,
-                moneyLucky: moneyRamdon
-            };
-        }
-        // Hàm để thêm danh sách khách hàng vào phần tử g
-        function showAllListCustomer() {
-            var container = document.getElementById("showAllListCustomerLucky");
-            var ul = document.createElement("ul");
-            accountLucky.forEach(function (account) {
-                var tam = Math.random() < 0.5 ? 2 : 3;
-                var thongTinChe = randomAccountAndMoney(account.account, tam);
-
-                var li = document.createElement("li");
-                li.innerHTML = ` <span class="span1">Tài khoản:<em>${thongTinChe.accountLucky}</em></span>
-                                <span class="span2">Lì <em>${thongTinChe.moneyLucky}</em> XU 🧧</span>
-                                `;
-                ul.appendChild(li);
-
-            });
-
-            container.appendChild(ul);
-        }
-        // Gọi hàm hiển thị danh sách khi trang web được tải
-        showAllListCustomer();
-        document.addEventListener('DOMContentLoaded', function () {
-            const numberOfEnvelopes = 10000; //(số lần rơi)
-            const totalFallTime = 15; //(totalFallTime:100) phút
-            const delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
-
-            for (let i = 0; i < numberOfEnvelopes; i++) {
-                // if(i > 10){
-                //     return ;
-                // }
-                createLuckyMoney(i * delayBetweenEnvelopes);
-                
-            }
-        });
-        function createLuckyMoney(delay) {
-            const luckyMoney = document.createElement('img');
-            luckyMoney.classList.add('lucky-money');
-            luckyMoney.src = 'image/hongbao.png';
-            // Random chiều rộng và chiều cao
-            const randomWidth = Math.floor(Math.random() * 50) + 80;
-            const randomHeight = Math.floor(Math.random() * 50) + 140; 
-
-            luckyMoney.style.width = randomWidth + 'px';
-            luckyMoney.style.height = randomHeight + 'px';
-
-            const startPosition = Math.random() * window.innerWidth;
-            luckyMoney.style.left = startPosition + 'px';
-            luckyMoney.style.animationDuration = '10s';
-            luckyMoney.style.animationDelay = delay + 's';
-            document.getElementById('lucky-money-container').appendChild(luckyMoney);
-            luckyMoney.addEventListener('animationiteration', function () {
-                luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
-            });
-        }
-    </script>
 </body>
+
 </html>
