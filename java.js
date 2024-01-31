@@ -81,38 +81,40 @@ function createLuckyMoney(delay) {
             var top = account.substring(0, middlePosition);
             var between = "*".repeat(account.length - middlePosition * 2);
             var last = account.substring(account.length - middlePosition);
-
+        
             // Tạo số tiền ngẫu nhiên từ 1000 đến 9999
-            var moneyRamdon = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
-
+            var moneyRandom = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        
             return {
                 accountLucky: top + between + last,
-                moneyLucky: moneyRamdon
+                moneyLucky: moneyRandom
             };
         }
-
+        
         // Hàm để thêm danh sách khách hàng vào phần tử g
         function showAllListCustomer() {
-             var container = $("#showAllListCustomerLucky");
-            var container2 =$("#showAllListCustomerLuckyCp");
+            var container = $("#showAllListCustomerLucky");
+            var container2 = $("#showAllListCustomerLuckyCp");
             var ul = $("<ul>");
+        
             accountLucky.forEach(function (account) {
                 var tam = Math.random() < 0.5 ? 2 : 3;
                 var anonymousAccount = randomAccountAndMoney(account.account, tam);
-console.log(`  <span >Tài khoản:<em> " + ${anonymousAccount.accountLucky} + "</em></span><span>Lì <em>" + ${anonymousAccount.moneyLucky} + "</em> XU 🧧</span>"`)
-
-                var li = $("<li>").html(`
-                <span class="span1">Tài khoản:<em> ${anonymousAccount.accountLucky}</em></span>
-                <span class="span2">Lì <em>${anonymousAccount.moneyLucky}</em> XU 🧧</span>
-            `);
-            console.log(li)
-            ul.append(li.clone()); 
-            });
-            container.append(ul.clone()); 
-            container2.append(ul); 
         
-       }
-       showAllListCustomer() ;
+                var li = $("<li>").html(`
+                    <span class="span1">Tài khoản:<em>${anonymousAccount.accountLucky}</em></span>
+                    <span class="span2">Lì <em>${anonymousAccount.moneyLucky}</em> XU 🧧</span>
+                `);
+        
+                ul.append(li.clone());
+            });
+        
+            container.append(ul.clone());
+            container2.append(ul);
+        }
+        
+        showAllListCustomer();
+        
 
 
       
