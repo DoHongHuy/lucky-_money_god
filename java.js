@@ -1,54 +1,102 @@
+// Sự kiện rơi bao lì lì
+function triggerLuckyMoneyEvent() {
+    var numberOfEnvelopes = 10; //(số lần rơi)
+    var totalFallTime = 3; //(totalFallTime:) phút
+    var delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
 
-
-function luckyMoneyTimeCalculation() {
+    for (let i = 0; i < numberOfEnvelopes; i++) {
+        createLuckyMoney(i * delayBetweenEnvelopes);
+    }
+}
+// Hàm cập nhật đồng hồ và xác định thời điểm tiếp theo
+function updateClock() {
     var thePresentTime = new Date();
     var lotteryTime = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 16, 15, 0, 0);
     var lotteryTime2 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 17, 15, 0, 0);
     var lotteryTime3 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 18, 15, 0, 0);
-    var tam = lotteryTime - thePresentTime;
-    var remainingHour = Math.floor(tam / (1000 * 60 * 60));
-    var remainingMinute = Math.floor((tam % (1000 * 60 * 60)) / (1000 * 60));
-    var remainingSecond = Math.floor((tam % (1000 * 60)) / 1000);
-    console.log("giơ" + remainingHour +"phut"+ remainingMinute + "giay" + remainingSecond)
-   $("#remainingHourCp").html(remainingHour);
-   $("#remainingMinuteCp").html(remainingMinute);
-   $("#remainingSecondCP").html(remainingSecond);
-   $("#hours").html(remainingHour);
-   $("#minutes").html(remainingMinute);
-   $("#seconds").html(remainingSecond);
+       // Kiểm tra nếu đến thời gian rơi bao lì lì
+    // Kiểm tra nếu đã qua 18:15, chuyển sang ngày mới
+    if (thePresentTime >= lotteryTime3) {
+        lotteryTime = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate() + 1, 16, 15, 0, 0);
+        lotteryTime2 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate() + 1, 17, 15, 0, 0);
+        lotteryTime3 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate() + 1, 18, 15, 0, 0);
+    }
+    if (thePresentTime.getTime() === lotteryTime2.getTime()) {
+        console.log("oki")
+        $(document).ready(function () {
+            // luckyMoney.removeEventListener('animationiteration', animationiteration);
+            triggerLuckyMoneyEvent();
+        });
+    }
+    // Tính thời gian còn lại cho đến thời điểm tiếp theo
+    var nextLotteryTime = (thePresentTime < lotteryTime) ? lotteryTime : (thePresentTime < lotteryTime2) ? lotteryTime2 : lotteryTime3;
+    var timeDiff = nextLotteryTime - thePresentTime;
+    var remainingHour = Math.floor(timeDiff / (1000 * 60 * 60));
+    var remainingMinute = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    var remainingSecond = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+    // console.log("giờ " + remainingHour + " phút " + remainingMinute + " giây " + remainingSecond);
+
+    // Cập nhật các phần tử HTML
+    $("#remainingHourCp").html(remainingHour);
+    $("#remainingMinuteCp").html(remainingMinute);
+    $("#remainingSecondCP").html(remainingSecond);
+    $("#hours").html(remainingHour);
+    $("#minutes").html(remainingMinute);
+    $("#seconds").html(remainingSecond);
 }
-var capNhatInterval = setInterval(luckyMoneyTimeCalculation, 1000);
-    document.addEventListener('DOMContentLoaded', function () {
-        var numberOfEnvelopes = 100; //(số lần rơi)
-        var totalFallTime = 3; //(totalFallTime:) phút
-        var delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes; 
-    
-        for (let i = 0; i < numberOfEnvelopes; i++) {
-            createLuckyMoney(i * delayBetweenEnvelopes); 
-        }
-    });
+$(document).ready(function () {
+    // luckyMoney.removeEventListener('animationiteration', animationiteration);
+    triggerLuckyMoneyEvent();
+});
+// Hàm chạy cập nhật đồng hồ mỗi giây
+function startClockUpdate() {
+    updateClock(); // Gọi ngay khi trang được load
+    setInterval(updateClock, 1000); // Cập nhật mỗi giây
+}
 
+// Bắt đầu cập nhật đồng hồ khi trang được load
+startClockUpdate();
 
+$(document).ready(function () {
+    // luckyMoney.removeEventListener('animationiteration', animationiteration);
+    triggerLuckyMoneyEvent();
+});
 function createLuckyMoney(delay) {
+
     const luckyMoney = document.createElement('img');
     luckyMoney.classList.add('lucky-money');
     luckyMoney.src = 'images/hongbaolixi.png';
-    // Random chiều rộng và chiều cao
-    const randomWidth = Math.floor(Math.random() * 50) + 80;
-    const randomHeight = Math.floor(Math.random() * 50) + 140; 
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const randomWidth = Math.floor(Math.random() * 30) + 50;
+        const randomHeight = Math.floor(Math.random() * 30) + 70;
+    
+        luckyMoney.style.width = randomWidth + 'px';
+        luckyMoney.style.height = randomHeight + 'px';
+    } else {
+        const randomWidth = Math.floor(Math.random() * 50) + 80;
+        const randomHeight = Math.floor(Math.random() * 50) + 140;
+    
+        luckyMoney.style.width = randomWidth + 'px';
+        luckyMoney.style.height = randomHeight + 'px';
+    }
+    
 
-    luckyMoney.style.width = randomWidth + 'px';
-    luckyMoney.style.height = randomHeight + 'px';
-
+    // Vị trí ban đầu ngẫu nhiên trên chiều rộng của màn hình
     const startPosition = Math.random() * window.innerWidth;
     luckyMoney.style.left = startPosition + 'px';
+
     luckyMoney.style.animationDuration = '10s';
     luckyMoney.style.animationDelay = delay + 's';
+
     document.getElementById('lucky-money-container').appendChild(luckyMoney);
+
+    // Xử lý sự kiện khi hình ảnh rơi xuống dưới cùng
     luckyMoney.addEventListener('animationiteration', function () {
         luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
     });
 }
+
 $(document).ready(function () {
     // Mảng chứa thông tin khách hàng may mắn
     var accountLucky = [
