@@ -9,22 +9,8 @@
     <script src="jquery.js"></script>
     <script src="java.js"></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <style>
-    /* di động */
-    @media (max-width: 767px) {
-        .weCp {
-            display: none;
-        }
-    }
-
-    /* máy tính */
-    @media (min-width: 767px) {
-        .weMb {
-            display: none;
-        }
-    }
 </style>
 <body id="wrap">
     <div id="lucky-money-container"></div>
@@ -88,47 +74,13 @@
                     <div class="box2">
                         <div class="dowebok str_wrap str_vertical">
                             <div class="str_move str_origin" style="top: -28.5px;">
-                                <ul class="clearfix cy_up_ul">
-                                    <div id="showAllListCustomerLucky">
-                                    </div>
-<!--                                     
-                                    <li>
-                                        <span class="span1">
-                                            Tài khoản: <em>Xn***d</em>
-                                        </span>
-                                        <span class="span2">
-                                            Lì xì <em>2268</em>
-                                            XU 🧧
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="span1">
-                                            Tài khoản: <em>co***n</em>
-                                        </span>
-                                        <span class="span2">
-                                            Lì xì <em>5143</em>
-                                            XU 🧧
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="span1">
-                                            Tài khoản: <em>ti***8</em>
-                                        </span>
-                                        <span class="span2">
-                                            Lì xì <em>3246</em>
-                                            XU 🧧
-                                        </span> -->
+                                <ul  class="clearfix cy_up_ul"  >
+                                    <div id="showAllListCustomerLucky" class="showAllListCustomerLucky"></div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <script>
-                            $(function () {
-                                $('.dowebok').liMarquee({
-                                    direction: 'up'
-                                });
-                            });
-                        </script>
+                     
                     </div>
                 </div>
             </div>
@@ -181,29 +133,12 @@
                 <div class="dowebok str_wrap str_vertical">
                     <div class="str_move str_origin" style="top: -124.85px;">
                         <ul class="clearfix cy_up_ul">
-                            <div id="showAllListCustomerLuckyCp">
+                            <div id="showAllListCustomerLuckyCp" class="showAllListCustomerLuckyCp">
                             </div>
-                            <li><span class="span1">Tài khoản: <em>Hd***n</em></span><span class="span2">Lì xì
-                                    <em>24993</em> XU 🧧</span></li>
-                            <li><span class="span1">Tài khoản: <em>mi***n</em></span><span class="span2">Lì xì
-                                    <em>9086</em> XU 🧧</span></li>
-                            <li><span class="span1">Tài khoản: <em>ys***3</em></span><span class="span2">Lì xì
-                                    <em>8269</em> XU 🧧</span></li>
-                            <li><span class="span1">Tài khoản: <em>03***0</em></span><span class="span2">Lì xì
-                                    <em>2268</em> XU 🧧</span></li>
-                            <li><span class="span1">Tài khoản: <em>co***n</em></span><span class="span2">Lì xì
-                                    <em>5143</em> XU 🧧</span></li>
-                            <li><span class="span1">Tài khoản: <em>ti***8</em></span><span class="span2">Lì xì
-                                    <em>3246</em> XU 🧧</span></li>
-                        </ul>
                     </div>
                 </div>
                 <script>
-                    $(function () {
-                        $('.dowebok').liMarquee({
-                            direction: 'up'
-                        });
-                    });
+                  
                 </script>
                 <!--Top end-->
             </div>
@@ -382,5 +317,11 @@
     </div>
 
 </body>
-
+<script>
+    $(function () {
+        $('.dowebok').liMarquee({
+            direction: 'up'
+        });
+    });
+</script>
 </html>

@@ -5,7 +5,19 @@
   top: 0;
   left: 0;
 }
+    /* di động */
+    @media (max-width: 767px) {
+      .weCp {
+          display: none;
+      }
+  }
 
+  /* máy tính */
+  @media (min-width: 767px) {
+      .weMb {
+          display: none;
+      }
+  }
 .lucky-money {
   position: absolute;
   display: inline-block;
