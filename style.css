@@ -1,4 +1,32 @@
 @charset "utf-8";
+/* start  Phong bao lì  xì rơi */
+#lucky-money-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.lucky-money {
+  position: absolute;
+  display: inline-block;
+  pointer-events: none;
+  transform: translateY(-100%);
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+      transform: translateY(-100%);
+  }
+
+  100% {
+      transform: translateY(100vh);
+  }
+}
+.custom-background {
+  background-color: #f00924;
+}
+/* end Phong bao lì  xì rơi */
 @media (max-width: 767px) {
    /* cyrillic-ext */
 @font-face {

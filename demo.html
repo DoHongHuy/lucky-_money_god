@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì Xì</title>
+    <style>
+        #lucky-money-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .lucky-money {
+            position: absolute;
+            display: inline-block;
+            pointer-events: none;
+            transform: translateY(-100%);
+            animation: fall linear infinite, shake linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100%) translateX(0);
+            }
+
+            50% {
+                transform: translateY(50vh) translateX(-5px);
+            }
+
+            100% {
+                transform: translateY(100vh) translateX(0);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-5px);
+            }
+        }
+
+        .custom-background {
+            background-color: #f00924;
+        }
+    </style>
+</head>
+<body class="custom-background">
+    <div id="lucky-money-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const numberOfEnvelopes = 100;
+            const totalFallTime = 15;
+            const delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
+
+            for (let i = 0; i < numberOfEnvelopes; i++) {
+                createLuckyMoney(i * delayBetweenEnvelopes);
+            }
+        });
+
+        function createLuckyMoney(delay) {
+            const luckyMoney = document.createElement('img');
+            luckyMoney.classList.add('lucky-money');
+            luckyMoney.src = 'images/hongbaolixi.png';
+            const randomWidth = Math.floor(Math.random() * 50) + 80;
+            const randomHeight = Math.floor(Math.random() * 50) + 140; 
+
+            luckyMoney.style.width = randomWidth + 'px';
+            luckyMoney.style.height = randomHeight + 'px';
+
+            const startPosition = Math.random() * window.innerWidth;
+            luckyMoney.style.left = startPosition + 'px';
+            luckyMoney.style.animationDuration = '10s';
+            luckyMoney.style.animationDelay = delay + 's';
+            document.getElementById('lucky-money-container').appendChild(luckyMoney);
+
+            luckyMoney.addEventListener('animationiteration', function () {
+                luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+            });
+        }
+    </script>
+</body>
+</html>
