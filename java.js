@@ -2,11 +2,16 @@
 
 function luckyMoneyTimeCalculation() {
     var thePresentTime = new Date();
-    var lotteryTime = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 16, 17, 0, 0);
+    var lotteryTime = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 16, 15, 0, 0);
+    var lotteryTime2 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 17, 15, 0, 0);
+    var lotteryTime3 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate(), 18, 15, 0, 0);
+
     var tam = lotteryTime - thePresentTime;
     var remainingHour = Math.floor(tam / (1000 * 60 * 60));
     var remainingMinute = Math.floor((tam % (1000 * 60 * 60)) / (1000 * 60));
     var remainingSecond = Math.floor((tam % (1000 * 60)) / 1000);
+
+
     console.log("giơ" + remainingHour +"phut"+ remainingMinute + "giay" + remainingSecond)
    $("#remainingHourCp").html(remainingHour);
    $("#remainingMinuteCp").html(remainingMinute);
@@ -19,8 +24,8 @@ function luckyMoneyTimeCalculation() {
 var capNhatInterval = setInterval(luckyMoneyTimeCalculation, 1000);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const numberOfEnvelopes = 0; //(số lần rơi)
-    const totalFallTime = 15; //(totalFallTime:100) phút
+    const numberOfEnvelopes = 100; //(số lần rơi)
+    const totalFallTime = 500; //(totalFallTime:100) phút
     const delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
 
     for (let i = 0; i < numberOfEnvelopes; i++) {
@@ -88,23 +93,24 @@ function createLuckyMoney(delay) {
 
         // Hàm để thêm danh sách khách hàng vào phần tử g
         function showAllListCustomer() {
-             var container = $(".showAllListCustomerLucky");
-        
-            var container2 =$(".showAllListCustomerLuckyCp");
+             var container = $("#showAllListCustomerLucky");
+            var container2 =$("#showAllListCustomerLuckyCp");
             var ul = $("<ul>");
             accountLucky.forEach(function (account) {
                 var tam = Math.random() < 0.5 ? 2 : 3;
                 var anonymousAccount = randomAccountAndMoney(account.account, tam);
-console.log(anonymousAccount.accountLucky)
-              
+console.log(`  <span >Tài khoản:<em> " + ${anonymousAccount.accountLucky} + "</em></span><span>Lì <em>" + ${anonymousAccount.moneyLucky} + "</em> XU 🧧</span>"`)
+
                 var li = $("<li>").html(`
-                <span class="span1">Tài khoản:<em>${anonymousAccount.accountLucky}</em></span>
+                <span class="span1">Tài khoản:<em> ${anonymousAccount.accountLucky}</em></span>
                 <span class="span2">Lì <em>${anonymousAccount.moneyLucky}</em> XU 🧧</span>
             `);
+            console.log(li)
             ul.append(li.clone()); 
             });
-            container.append(ul.clone()); // Thêm bản sao của ul vào container
-            container2.append(ul); // Thêm ul (không cần clone ở đây nếu muốn chia sẻ cùng một danh sách)
+            container.append(ul.clone()); 
+            container2.append(ul); 
+        
        }
        showAllListCustomer() ;
 
