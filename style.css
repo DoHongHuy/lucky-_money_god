@@ -1,7 +1,67 @@
 /* start  Phong bao lì  xì rơi */
 /* di động */
 
+.luckyMoneyAc {
+  position: absolute;
+  font-size: 26px;
+  color: #f1f508;
+  margin-left: 22px;
+  margin-bottom: 94px;
+  margin-top: -13px;
+  margin-right: -12px;
+}
+.modal-content {
+  width: 361px;
+  height: 249px;
+  background: url(images/hongbao1.png) 0 0 no-repeat;
+  background-size: cover;
+  /* border: none; */
+}
+.modal-header {
+  /* display: -webkit-box; */
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1rem;
+  /* border-bottom: 1px solid #e9ecef; */
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+}
 
+  .parent {
+      position: relative;
+  }
+
+  .modal-header .close {
+      padding: 1rem;
+      margin: -2rem -2rem -2rem auto;
+  }
+
+  .child1 {
+      position: absolute;
+      border: 2px solid #9e1509;
+      padding: 1px 10px;
+      background-color: #f3c211;
+      color: #333;
+      cursor: pointer;
+      border-radius: 7px;
+      margin-left: 23px;
+      margin-bottom: 122px;
+      margin-top: 78px;
+      margin-right: -6px;
+  }
+
+  .chillclose {
+      margin-left: 23px;
+      margin-bottom: 122px;
+      margin-top: 78px;
+      margin-right: -6px;
+  }
 .span1{
  text-align: left;
 }
@@ -24,7 +84,50 @@
     /* Ngăn chặn việc cuộn trang */
     /* position: fixed; */
   }
+  .luckyMoneyAc {
+    position: absolute;
+    font-size: 26px;
+    color: #f1f508;
+    margin-left: 22px;
+    margin-bottom: 94px;
+    margin-top: -13px;
+    margin-right: -12px;
+}
+    .modal-content {
+        background: url(images/hongbao1.png) 0 0 no-repeat;
+        background-size: cover;
+        border : none
+    }
 
+    .parent {
+        position: relative;
+    }
+
+    .modal-header .close {
+        padding: 1rem;
+        margin: -2rem -2rem -2rem auto;
+    }
+
+    .child1 {
+        position: absolute;
+        border: 2px solid #9e1509;
+        padding: 1px 10px;
+        background-color: #f3c211;
+        color: #333;
+        cursor: pointer;
+        border-radius: 7px;
+        margin-left: 23px;
+        margin-bottom: 122px;
+        margin-top: 78px;
+        margin-right: -6px;
+    }
+
+    .chillclose {
+        margin-left: 23px;
+        margin-bottom: 122px;
+        margin-top: 78px;
+        margin-right: -6px;
+    }
   #lucky-money-container {
     position: relative;
     top: 0;
@@ -81,14 +184,18 @@
     top: 0;
     left: 0;
   }
-
   .lucky-money {
-    position: absolute;
-    display: inline-block;
-    pointer-events: none;
+    position: fixed;
+    width: 80%;
+    height: 10%;
+
+    /* Đảm bảo hình ảnh đầy đủ phần tử cha và không bị distortion */
+    z-index: 999999;
+    /* Sắp xếp phần tử trên cùng */
+
+    display: block;
     transform: translateY(-100%);
     animation: fall linear infinite;
-    z-index: 3
   }
 
   @keyframes fall {
@@ -928,7 +1035,7 @@
   }
 
   .dowebok ul li span.span2 {
-    width: 3rem;
+    width: 2.4rem;
   }
 
   .dowebok ul li span.span2 em {

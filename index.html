@@ -357,7 +357,6 @@
 </body>
 <script>
     function btnLucky() {
-        alert("say tou oki")
         $('.modal-content').css({
             "background": "",
             "background":"url(images/hongbao2.png)",
@@ -379,53 +378,13 @@
         "margin-top": "",
         "margin-right": ""
        });
+       $(".modal-header").css({
+        "border-bottom" : ""
+       }) 
     }
 </script>
 <style>
-.luckyMoneyAc {
-    position: absolute;
-    font-size: 26px;
-    color: #f1f508;
-    margin-left: 22px;
-    margin-bottom: 94px;
-    margin-top: -13px;
-    margin-right: -12px;
-}
-    .modal-content {
-        background: url(images/hongbao1.png) 0 0 no-repeat;
-        background-size: cover;
-        border : none
-    }
 
-    .parent {
-        position: relative;
-    }
-
-    .modal-header .close {
-        padding: 1rem;
-        margin: -2rem -2rem -2rem auto;
-    }
-
-    .child1 {
-        position: absolute;
-        border: 2px solid #9e1509;
-        padding: 1px 10px;
-        background-color: #f3c211;
-        color: #333;
-        cursor: pointer;
-        border-radius: 7px;
-        margin-left: 23px;
-        margin-bottom: 122px;
-        margin-top: 78px;
-        margin-right: -6px;
-    }
-
-    .chillclose {
-        margin-left: 23px;
-        margin-bottom: 122px;
-        margin-top: 78px;
-        margin-right: -6px;
-    }
 </style>
 <script>
     $(function () {

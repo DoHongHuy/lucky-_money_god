@@ -1,7 +1,7 @@
 // Sự kiện rơi bao lì lì
 function triggerLuckyMoneyEvent() {
-    var numberOfEnvelopes = 10; //(số lần rơi)
-    var totalFallTime = 3; //(totalFallTime:) phút
+    var numberOfEnvelopes = 20; //(số lần rơi)
+    var totalFallTime = 30; //(totalFallTime:) phút
     var delayBetweenEnvelopes = totalFallTime / numberOfEnvelopes;
 
     for (let i = 0; i < numberOfEnvelopes; i++) {
@@ -87,7 +87,7 @@ function createLuckyMoney(delay) {
     const startPosition = Math.random() * window.innerWidth;
     luckyMoney.style.left = startPosition + 'px';
 
-    luckyMoney.style.animationDuration = '20s';
+    luckyMoney.style.animationDuration = '30s';
     luckyMoney.style.animationDelay = delay + 's';
 
     const luckyMoneyImages = document.querySelectorAll('.lucky-money');
