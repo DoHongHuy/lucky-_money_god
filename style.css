@@ -1,5 +1,17 @@
 /* start  Phong bao lì  xì rơi */
 /* di động */
+
+
+.span1{
+ text-align: left;
+}
+
+.span2{
+  text-align: right;
+}
+
+
+
 @media (max-width: 767px) {
   .weCp {
     display: none;
@@ -8,9 +20,9 @@
   body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* Ngăn chặn việc cuộn trang */
-    position: fixed;
+    /* position: fixed; */
   }
 
   #lucky-money-container {
@@ -655,14 +667,13 @@
     list-style: none;
   }
 
-  html {}
 
   body {
     margin-bottom: 1.2rem;
     font: 0.24rem/1.8 "Roboto Condensed";
     color: #000;
     background: #d0000d;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
   }
 
   img {
@@ -876,7 +887,7 @@
   }
 
   .box {
-    margin: -0.1rem 0.2rem 0.2rem 0.2rem;
+    margin: -0.6rem 0.2rem 0.2rem 0.2rem;
     padding: 0.1rem;
     border-radius: 0.1rem;
     background: #ffefce;
@@ -899,7 +910,9 @@
     text-align: center;
   }
 
-  .dowebok ul li {}
+  .dowebok ul li {
+
+  }
 
   .dowebok ul li span {
     display: inline-block;
@@ -915,14 +928,13 @@
   }
 
   .dowebok ul li span.span2 {
-    width: 3.2rem;
+    width: 3rem;
   }
 
   .dowebok ul li span.span2 em {
     color: #f00;
   }
 
-  .dowebok ul li span.span3 {}
 
   .view-detail {
     padding: 0.1rem 0 1.6rem 0;
