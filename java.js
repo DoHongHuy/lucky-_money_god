@@ -66,6 +66,7 @@ function createLuckyMoney(delay) {
 
     const luckyMoney = document.createElement('img');
     luckyMoney.classList.add('lucky-money');
+    
     luckyMoney.src = 'images/hongbaolixi.png';
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         const randomWidth = Math.floor(Math.random() * 30) + 50;
@@ -86,15 +87,57 @@ function createLuckyMoney(delay) {
     const startPosition = Math.random() * window.innerWidth;
     luckyMoney.style.left = startPosition + 'px';
 
-    luckyMoney.style.animationDuration = '10s';
+    luckyMoney.style.animationDuration = '20s';
     luckyMoney.style.animationDelay = delay + 's';
+
+    const luckyMoneyImages = document.querySelectorAll('.lucky-money');
+    console.log(luckyMoneyImages)
+    luckyMoneyImages.forEach(function (luckyMoney) {
+        console.log('forEach');
+        luckyMoney.addEventListener('click', function () {
+            console.log('addEventListener');
+            handclick()
+            luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+
+            // Kiểm tra xem ảnh có còn trong màn hình không
+            if (luckyMoney.getBoundingClientRect().bottom > window.innerHeight) {
+                // Nếu ảnh rơi xuống dưới cùng, loại bỏ nó khỏi DOM
+                luckyMoney.remove();
+                console.log('Hình ảnh bao lì lì đã biến mất!');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+    const luckyMoneyImages = document.querySelectorAll('.lucky-money');
+
+    luckyMoneyImages.forEach(function (luckyMoney) {
+        luckyMoney.addEventListener('click', function () {
+            console.log('Bạn đã nhấp vào hình ảnh bao lì lì!');
+            luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+
+            if (luckyMoney.getBoundingClientRect().bottom > window.innerHeight) {
+                luckyMoney.remove();
+                console.log('Hình ảnh bao lì lì đã biến mất!');
+            }
+        });
+    });
+});
 
     document.getElementById('lucky-money-container').appendChild(luckyMoney);
 
     // Xử lý sự kiện khi hình ảnh rơi xuống dưới cùng
+   
+    // Duyệt qua từng ảnh và thêm sự kiện onclick
+ 
+
     luckyMoney.addEventListener('animationiteration', function () {
-        luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+        // luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
+        
+        // console.log('Bạn đã nhấp vào hình ảnh bao lì lì!');
+        luckyMoney.remove();
+            console.log('Hình ảnh bao lì lì đã biến mất!');
     });
+    
 }
 
 $(document).ready(function () {

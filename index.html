@@ -5,13 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>THẦN TÀI LÌ XÌ - THANTAI</title>
     <!-- mở bao lì xì modal -->
-    <link href="images/ext.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        crossorigin="anonymous">
+
+
     <script src="jquery.js"></script>
     <script src="java.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
+    *,
+    ::after,
+    ::before {
+        box-sizing: content-box;
+    }
+
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
 </style>
+
 <body id="wrap">
     <div id="lucky-money-container" class="lucky-money-container"></div>
     <div class="weMb">
@@ -59,7 +77,7 @@
                                 <span id="minutes"> </span>PHÚT
                                 <span id="seconds"> </span>GIÂY
                             </div>
-                           
+
                         </dd>
                     </dl>
                     <div id="div_left">
@@ -74,13 +92,13 @@
                     <div class="box2">
                         <div class="dowebok str_wrap str_vertical">
                             <div class="str_move str_origin" style="top: -28.5px;">
-                                <ul  class="clearfix cy_up_ul"  >
+                                <ul class="clearfix cy_up_ul">
                                     <div id="showAllListCustomerLucky" class="showAllListCustomerLucky"></div>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                     
+
                     </div>
                 </div>
             </div>
@@ -90,8 +108,8 @@
                 </a>
                 <h2 style="display: none">Chi tiết sự kiện</h2>
             </div>
-           
-       
+
+
             <div class="black_bg" id="dialogBg"></div>
         </div>
     </div>
@@ -102,7 +120,16 @@
                 <li><a target="_blank" href="">Trực tiếp</a></li>
                 <li><a target="_blank" href="">Game dự
                         đoán</a></li>
-                <li><a href="javascript:void(0);" id="showLoginDialog">Đăng nhập</a></li>
+                <li>
+                    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
+                    <a type="button" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"
+                        id="showLoginDialog">Đăng nhập</a>
+                    <!-- </button> -->
+                    <!-- <button>
+                        <a type="button" data-toggle="modal" data-target="#exampleModal" href="javascript:void(0);"
+                            id="showLoginDialog">Đăng nhập</a>
+                    </button> -->
+                </li>
             </ul>
         </div>
 
@@ -113,13 +140,13 @@
                     <div>
                         <dd><span id="remainingHourCp">
 
-                        </span>GIỜ<span id="remainingMinuteCp">
+                            </span>GIỜ<span id="remainingMinuteCp">
 
-                        </span>PHÚT<span id="remainingSecondCP">
+                            </span>PHÚT<span id="remainingSecondCP">
 
-                        </span>GIÂY</dd>
+                            </span>GIÂY</dd>
                     </div>
-                
+
                     </dd>
                 </dl>
                 <div id="div_left">Tổng giải thưởng <span id="leftred">00000000</span>VNĐ</div>
@@ -138,7 +165,7 @@
                     </div>
                 </div>
                 <script>
-                  
+
                 </script>
                 <!--Top end-->
             </div>
@@ -174,19 +201,19 @@
                             <td rowspan="3" width="13%">
                                 <p align="center">
                                     <font size="4" color="#FF0000">
-                                        <span >Tổng giải thưởng mỗi đợt</span>
+                                        <span>Tổng giải thưởng mỗi đợt</span>
                                     </font><span style="color: #ff0000; ; ">
                                         <font size="4"><br></font>
                                     </span>
                                     <font size="4" color="#FF0000">
-                                        <span >7.999.999đ 🧧</span>
+                                        <span>7.999.999đ 🧧</span>
                                     </font>
                                 </p>
                             </td>
                             <td width="13%" align="center">
                                 <span style="background-color: #FFFFFF">
                                     <font size="4">
-                                        <span >16:15 - 16:30</span>
+                                        <span>16:15 - 16:30</span>
                                     </font>
                                 </span>
                             </td>
@@ -196,7 +223,7 @@
                                         style="box-sizing:border-box; color:#ff0000; font-style:normal; font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; orphans:2; text-align:center; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; text-decoration-style:initial; text-decoration-color:initial; background-color:#ffffff">
                                         <font size="4">500đ - 39.039đ 🧧</font>
                                     </span>
-                                </p> 
+                                </p>
                             </td>
 
                         </tr>
@@ -204,7 +231,7 @@
                             <td width="13%" align="center">
                                 <span style="background-color: #FFFFFF">
                                     <font size="4">
-                                        <span >17:15 - 17:30</span>
+                                        <span>17:15 - 17:30</span>
                                     </font>
                                 </span>
                             </td>
@@ -283,45 +310,139 @@
         </div>
         <!--Draw end-->
 
-        <!--Login start-->
-        <div class="dialog" id="loginDialog">
-            <div class="tan_box2">
-    
-                <div class="tan_con">
-                    <a hred="javascript:;" class="closeDialog3 closeLogin"></a>
-                    <div class="hb_sr">
-                        <form id="form-login" method="POST" action="#">
-                            <input type="hidden" name="_token" value="C8NXA3wWWNvbaFM1s6Lb5aHaFLAkiiIXZVcsvNwx">
-                            <span>ĐĂNG NHẬP</span>
-                            <input type="text" name="username" id="username" placeholder="Tên đăng nhập">
-                            <input type="password" name="password" id="password" placeholder="Mật khẩu">
-                        </form>
-                    </div>
-                    <div class="hb_sr2">
-                        <a href="javascript:;" id="check"></a>
-                        <div class="login_method">
-                            Đăng nhập bằng
-                            <a href=""><img
-                                    src="images/google.png" alt="login with google"
-                                    width="24" height="24"></a>
-                        </div>
-                        <div>
-                            <a class="register" href="">Đăng ký</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Login end-->
+
         <div class="black_bg" id="dialogBg"></div>
     </div>
+    <!--Login start-->
+    <!-- Modal -->
+    <div class="modal fade" id="modalResutCheck" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-body parent">
+                        <div class=""><span class="luckyMoneyAc"></span></div>
+                        <div>
+                            <button type="button" class="child1" style="background-color: rgb(248, 224, 6);"
+                                onclick="btnLucky()">
+                                Mở lì xì
+                            </button>
+                        </div>
+                        <div class="hongbao1 dialog ssssssaaaa" id="resultDialog" style="z-index:1000002 ">
+                            <span class="hongbao2_colse closeDialog1"></span>
+                            <div class="hongbao_s"><em id="">0.00</em></div>
+                            <div class="">🧧<span id="resultTimes">0</span>🧧</div>
+                            <div class="hongbao_btn closeDialog1"><span>Đóng</span></div>
+                        </div>
+                    </div>
+                    <button type="button" class="close chillclose" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
+
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <!--Login end-->
+    <!--Result start-->
+    <div class="hongbao1 dialog" id="resultDialog" style="z-index:1000002 ;">
+        <span class="hongbao2_colse closeDialog1"></span>
+        <div class="hongbao_s"><em id="">0.00</em></div>
+        <div class="">🧧<span id="resultTimes">0</span>🧧</div>
+        <div class="hongbao_btn closeDialog1"><span>Đóng</span></div>
+    </div>
+    <!--Result end-->
 </body>
+<script>
+    function btnLucky() {
+        alert("say tou oki")
+        $('.modal-content').css({
+            "background": "",
+            "background":"url(images/hongbao2.png)",
+            "background-size": "cover"
+        })
+        var moneyRandom = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+       $(".luckyMoneyAc").html(`${moneyRandom}`)
+       $(".child1").remove();
+       $(".child1").css({
+        "position": "",
+        "border":"",
+        "padding": "",
+        "background-color":"" ,
+        "color": "",
+        "cursor": "",
+        "border-radius":"" ,
+        "margin-left": "",
+        "margin-bottom": "",
+        "margin-top": "",
+        "margin-right": ""
+       });
+    }
+</script>
+<style>
+    .luckyMoneyAc{
+        position: absolute;
+    font-size: 26px;
+    color: #f1f508;
+    margin-left: 44px;
+    margin-bottom: 92px;
+    margin-top: 0px;
+    margin-right: -12px;
+    }
+    .modal-content {
+        background: url(images/hongbao1.png) 0 0 no-repeat;
+        background-size: cover;
+        border : none
+    }
+
+    .parent {
+        position: relative;
+    }
+
+    .modal-header .close {
+        padding: 1rem;
+        margin: -2rem -2rem -2rem auto;
+    }
+
+    .child1 {
+        position: absolute;
+        border: 2px solid #9e1509;
+        padding: 1px 10px;
+        background-color: #f3c211;
+        color: #333;
+        cursor: pointer;
+        border-radius: 7px;
+        margin-left: 23px;
+        margin-bottom: 122px;
+        margin-top: 78px;
+        margin-right: -6px;
+    }
+
+    .chillclose {
+        margin-left: 23px;
+        margin-bottom: 122px;
+        margin-top: 78px;
+        margin-right: -6px;
+    }
+</style>
 <script>
     $(function () {
         $('.dowebok').liMarquee({
             direction: 'up'
         });
     });
+    function handclick() {
+        $('#modalResutCheck').modal('show')
+        $('.lucky-money').remove
+    }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
 </html>
