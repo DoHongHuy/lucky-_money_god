@@ -1,5 +1,16 @@
 /* start  Phong bao lì  xì rơi */
 /* di động */
+/* CSS để loại bỏ hiệu ứng khung khi chọn */
+.close.chillclose:focus {
+  outline: none;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  -webkit-appearance: none;
+}
 .modal-header {
   display: -webkit-box;
   display: -ms-flexbox;
