@@ -4,7 +4,9 @@
 .close.chillclose:focus {
   outline: none;
 }
-
+.hidden {
+  display: none;
+}
 button.close {
   padding: 0;
   background-color: transparent;

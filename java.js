@@ -22,7 +22,6 @@ function updateClock() {
         lotteryTime3 = new Date(thePresentTime.getFullYear(), thePresentTime.getMonth(), thePresentTime.getDate() + 1, 18, 15, 0, 0);
     }
     if (thePresentTime.getTime() === lotteryTime2.getTime()) {
-        console.log("oki")
         $(document).ready(function () {
             // luckyMoney.removeEventListener('animationiteration', animationiteration);
             triggerLuckyMoneyEvent();
@@ -91,11 +90,8 @@ function createLuckyMoney(delay) {
     luckyMoney.style.animationDelay = delay + 's';
 
     const luckyMoneyImages = document.querySelectorAll('.lucky-money');
-    console.log(luckyMoneyImages)
     luckyMoneyImages.forEach(function (luckyMoney) {
-        console.log('forEach');
         luckyMoney.addEventListener('click', function () {
-            console.log('addEventListener');
             handclick()
             luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
 
@@ -103,7 +99,6 @@ function createLuckyMoney(delay) {
             if (luckyMoney.getBoundingClientRect().bottom > window.innerHeight) {
                 // Nếu ảnh rơi xuống dưới cùng, loại bỏ nó khỏi DOM
                 luckyMoney.remove();
-                console.log('Hình ảnh bao lì lì đã biến mất!');
             }
         });
     });
@@ -112,12 +107,10 @@ function createLuckyMoney(delay) {
 
     luckyMoneyImages.forEach(function (luckyMoney) {
         luckyMoney.addEventListener('click', function () {
-            console.log('Bạn đã nhấp vào hình ảnh bao lì lì!');
             luckyMoney.style.left = Math.random() * window.innerWidth + 'px';
 
             if (luckyMoney.getBoundingClientRect().bottom > window.innerHeight) {
                 luckyMoney.remove();
-                console.log('Hình ảnh bao lì lì đã biến mất!');
             }
         });
     });

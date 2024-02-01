@@ -322,11 +322,17 @@
                 <div class="modal-header">
                     <div class="modal-body parent">
                         <div class=""><span class="luckyMoneyAc"></span></div>
-                        <div>
+                        <div class="showSweepstakes">
                             <button type="button" class="child1" style="background-color: rgb(248, 224, 6);"
-                                onclick="btnLucky()">
+                                onclick="btnLucky()" >
                                 Mở lì xì
                             </button>
+                            <div class="notYesMoneyAcount">
+                                <!-- <div class="child3" hidden="true" >
+                                    Bạn đã hết lượt rút. Vui lòng nhận ở khung giờ tiếp theo.
+                                </div> -->
+                            </div>
+                            
                         </div>
                         <div class="hongbao1 dialog ssssssaaaa" id="resultDialog" style="z-index:1000002 ">
                             <span class="hongbao2_colse closeDialog1"></span>
@@ -355,14 +361,38 @@
     </div>
     <!--Result end-->
 </body>
+<style>
+.child3 {
+    position: absolute;
+    border: 1px solid #9e1509;
+    padding: 1px 10px;
+    background-color: #feb100;
+    color: #333;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-left: -80px;
+    margin-bottom: 96px;
+    margin-top: 76px;
+    margin-right: -64px;
+    height: 51px;
+}
+</style>
 <script>
+    // btnLucky()
+    var moneyAccount = 0;
     function btnLucky() {
+       
         $('.modal-content').css({
             "background": "",
             "background":"url(images/hongbao2.png)",
             "background-size": "cover"
         })
+
         var moneyRandom = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+        console.log(moneyRandom + "Tièn ramdom");
+        moneyAccount = moneyAccount + moneyRandom;
+        console.log(moneyAccount + "tiengoc");
+
        $(".luckyMoneyAc").html(`${moneyRandom}`)
        $(".child1").remove();
        $(".child1").css({
@@ -387,12 +417,48 @@
 
 </style>
 <script>
+    //  function toggleVisibility() {
+    //   var message = document.getElementById("message");
+    //   // Kiểm tra xem thuộc tính hidden có tồn tại hay không
+    //   if (message.hasAttribute("hidden")) {
+    //     message.removeAttribute("hidden");
+    //   } else {
+    //     message.setAttribute("hidden", "true");
+    //   }
+    // }
+
+
     $(function () {
         $('.dowebok').liMarquee({
             direction: 'up'
         });
     });
+
+    // <button type="button" class="child1" style="background-color: rgb(248, 224, 6);"
+    //                             onclick="btnLucky()">
+    //                             Mở lì xì
+    //                         </button>
+    //                         <span class="child3" hidden="true">
+    //                             Bạn đã hết lượt rút. Vui lòng nhận ở khung giờ tiếp theo.
+    //                         </span>
+
     function handclick() {
+        console.log(moneyAccount)
+        notYesMoneyAcount = document.getElementsByClassName("notYesMoneyAcount")
+       if(moneyAccount > 0){
+        console.log("ra")
+        for (var i = 0; i < notYesMoneyAcount.length; i++) {
+            $('.modal-content').css({
+            "background": "",
+            "background":"url(images/hongbao1.png)",
+            "background-size": "cover"
+        })
+        $(".luckyMoneyAc").html("")
+           notYesMoneyAcount[i].innerHTML = `<div class="child3">
+                                          Bạn đã hết lượt rút. Vui lòng nhận ở khung giờ tiếp theo.
+                                        </div>`;
+    }
+       }
         $('#modalResutCheck').modal('show')
         $('.lucky-money').remove
     }
