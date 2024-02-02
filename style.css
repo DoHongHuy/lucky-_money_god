@@ -1,9 +1,29 @@
 /* start  Phong bao lì  xì rơi */
 /* di động */
 /* CSS để loại bỏ hiệu ứng khung khi chọn */
+.hedingRegister{
+  /* border: 1px solid #000;
+  position: relative;
+  text-align: center;
+  background-color: #970e0c;
+  padding: 5px;
+  right: -1rem; */
+}
+.btnSubmit{
+  
+    width: 100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+
 .close.chillclose:focus {
   outline: none;
 }
+ol, ul {
+  padding-left: 0rem;
+}
+
 .hidden {
   display: none;
 }
@@ -139,12 +159,12 @@ button.close {
   }
   .luckyMoneyAc {
     position: absolute;
-    font-size: 26px;
+    font-size: 24px;
     color: #f1f508;
-    margin-left: 22px;
-    margin-bottom: 94px;
-    margin-top: -13px;
-    margin-right: -12px;
+    margin-left: 40px;
+    margin-bottom: 81px;
+    margin-top: 5px;
+    margin-right: 17px;
 }
     .modal-content {
         background: url(images/hongbao1.png) 0 0 no-repeat;
@@ -169,7 +189,7 @@ button.close {
         color: #333;
         cursor: pointer;
         border-radius: 7px;
-        margin-left: 23px;
+        margin-left: 34p  x;
         margin-bottom: 122px;
         margin-top: 78px;
         margin-right: -6px;
@@ -245,7 +265,7 @@ width: 120%; /* 100% chiều rộng của phần tử cha */
 /* height: 100%; 100% chiều cao của phần tử cha */
 }
 .bodyModalLogin{
-    margin-top: 0.8rem;
+    margin-top: 13.8rem;
 }
 
   * {
@@ -292,6 +312,11 @@ width: 120%; /* 100% chiều rộng của phần tử cha */
     animation-duration: 5s;
     /* Điều chỉnh thời gian rơi cho thiết bị di động */
   }
+/* Sửa giá trị của font-size thành 60px */
+.fontSideMbCp {
+  font-size: 57.3333px;
+}
+
 }
 
 /* end Phong bao lì  xì rơi */
@@ -944,7 +969,7 @@ width: 120%; /* 100% chiều rộng của phần tử cha */
 
   nav {
     width: 100%;
-    height: 1rem;
+    height: 1.3rem;
     padding-top: 0.15rem;
     color: #490004;
     text-align: center;
@@ -3020,7 +3045,7 @@ width: 120%; /* 100% chiều rộng của phần tử cha */
   width: 40px;
   height: 40px;
   cursor: pointer;
-  margin: 0.4rem 0.3rem 0.7rem 6.3rem;
+  margin: 1.4rem 1.3rem 0.7rem 6.3rem;
 }
 
 .hb_sr {
